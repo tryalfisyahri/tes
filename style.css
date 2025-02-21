@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+}  
+
+body {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #444;
+}
+
+.wrapper {
+    width: 300px;
+}    
+
+.photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    text-align: center;
+}
+
+.table tr td {
+    padding: .25rem;
+}
+
+.table tr td:first-child {
+    font-weight: 700;
+}
