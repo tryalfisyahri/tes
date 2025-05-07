@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
   <style>
-    /* Reset dasar */
     * {
       margin: 0;
       padding: 0;
@@ -16,20 +15,23 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    /* Navbar utama */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
     .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: white;
-      padding: 15px 30px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 999;
     }
 
-    /* Logo */
     .logo {
       display: flex;
       align-items: center;
@@ -39,27 +41,31 @@
     }
 
     .logo img {
-      width: 32px;
+      width: 30px;
       margin-right: 10px;
     }
 
-    /* Link navigasi */
     .nav-links {
-      list-style: none;
       display: flex;
       gap: 20px;
+      list-style: none;
     }
 
     .nav-links li a {
       text-decoration: none;
       color: #333;
       font-size: 16px;
-      padding: 6px 10px;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
 
     .nav-links li a:hover {
       color: #008080;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
     }
 
     /* Dropdown */
@@ -70,12 +76,12 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      background-color: white;
       top: 35px;
       left: 0;
+      background-color: white;
       list-style: none;
       padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .dropdown:hover .dropdown-menu {
@@ -90,39 +96,69 @@
     }
 
     .dropdown-menu li a:hover {
-      background-color: #f0f0f0;
+      background-color: #f5f5f5;
     }
 
-    /* Tombol tema (icon matahari) */
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 18px;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid #ddd;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="library-icon.png" alt="Library Icon">
-        <span>Library</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li class="dropdown">
-          <a href="#">Lainnya</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Koleksi</a></li>
-            <li><a href="#">Layanan</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="theme-toggle">🌞</div>
-    </nav>
-  </header>
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="library-icon.png" alt="Library">
+      Library
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li class="dropdown">
+        <a href="#">Lainnya</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Koleksi</a></li>
+          <li><a href="#">Layanan</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
