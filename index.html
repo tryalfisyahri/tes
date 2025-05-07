@@ -4,207 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LibSmart - Perpustakaan Cerdas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 24px;
-    }
-    nav a {
-      color: white;
-      margin-left: 15px;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .hero {
-      background: linear-gradient(#0050a0, #003366);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .hero h2 {
-      font-size: 32px;
-    }
-    .hero p {
-      margin: 10px 0 20px;
-    }
-    .hero button {
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background-color: #ff8000;
-      color: white;
-    }
-    .btn-secondary {
-      background: white;
-      color: #003366;
-      border: 1px solid #003366;
-    }
-
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      background: #fff;
-      padding: 40px 10px;
-    }
-    .stat {
-      flex: 1 1 150px;
-      text-align: center;
-      margin: 10px;
-    }
-    .stat h3 {
-      color: #003366;
-      font-size: 24px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .feature {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .feature h4 {
-      color: #003366;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background-color: #003366;
-      color: white;
-      padding: 40px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .footer-col {
-      flex: 1 1 200px;
-      margin-bottom: 20px;
-    }
-    .footer-col h4 {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    .footer-col p, .footer-col a {
-      font-size: 14px;
-      color: #ddd;
-      text-decoration: none;
-    }
-    .footer-col a:hover {
-      text-decoration: underline;
-    }
-    .bottom-bar {
-      text-align: center;
-      padding: 10px;
-      background-color: #002244;
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .hero h2 {
-        font-size: 26px;
-      }
-    }
+    body { font-family: 'Poppins', sans-serif; }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <header>
-    <h1>LibSmart</h1>
-    <nav>
-      <a href="#">Beranda</a>
-      <a href="#">Koleksi</a>
-      <a href="#">Layanan</a>
-      <a href="#">Tentang</a>
+  <!-- Header -->
+  <header class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">LibSmart</h1>
+    <nav class="space-x-4 hidden md:block">
+      <a href="#" class="hover:underline">Beranda</a>
+      <a href="#" class="hover:underline">Koleksi</a>
+      <a href="#" class="hover:underline">Layanan</a>
+      <a href="#" class="hover:underline">Tentang</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Akses Mudah, Ilmu Lebih Dekat!</h2>
-    <p>Latakilan datap akses sejalahaht akses terbaik Anda.</p>
-    <button class="btn-primary">Cari Buku</button>
-    <button class="btn-secondary">Login Mahasiswa</button>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white text-center py-16 px-4">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4">Akses Mudah, Ilmu Lebih Dekat!</h2>
+    <p class="mb-6 max-w-xl mx-auto">Latakilan datap akses sejalahaht akses terbaik Anda.</p>
+    <div class="space-x-4">
+      <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full">Cari Buku</button>
+      <button class="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-700">Login Mahasiswa</button>
+    </div>
   </section>
 
-  <section class="stats">
-    <div class="stat"><h3>50.000+</h3><p>Koleksi Buku</p></div>
-    <div class="stat"><h3>1.200.000+</h3><p>Total Pengunjung</p></div>
-    <div class="stat"><h3>5.000+</h3><p>E-Jurnal</p></div>
-    <div class="stat"><h3>8.000+</h3><p>Skripsi</p></div>
+  <!-- Statistik -->
+  <section class="py-10 px-6 bg-white grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div><h3 class="text-2xl font-semibold text-blue-900">50.000+</h3><p>Koleksi Buku</p></div>
+    <div><h3 class="text-2xl font-semibold text-blue-900">1.200.000+</h3><p>Total Pengunjung</p></div>
+    <div><h3 class="text-2xl font-semibold text-blue-900">5.000+</h3><p>E-Jurnal</p></div>
+    <div><h3 class="text-2xl font-semibold text-blue-900">8.000+</h3><p>Skripsi</p></div>
   </section>
 
-  <section class="features">
-    <div class="feature">
-      <h4>Rekomendasi Buku AI</h4>
+  <!-- Fitur Unggulan -->
+  <section class="py-12 px-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h4 class="font-semibold text-blue-800 mb-2">Rekomendasi Buku AI</h4>
       <p>Teknologi AI bantu cari referensi terbaik sesuai kebutuhan Anda.</p>
     </div>
-    <div class="feature">
-      <h4>Koleksi e-Jurnal Dosen</h4>
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h4 class="font-semibold text-blue-800 mb-2">Koleksi e-Jurnal Dosen</h4>
       <p>Akses langsung publikasi dosen dari berbagai disiplin ilmu.</p>
     </div>
-    <div class="feature">
-      <h4>Riwayat Pinjaman Otomatis</h4>
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h4 class="font-semibold text-blue-800 mb-2">Riwayat Pinjaman Otomatis</h4>
       <p>Lihat dan kelola histori peminjaman buku Anda.</p>
     </div>
-    <div class="feature">
-      <h4>Chatbot Tanya Pustaka</h4>
+    <div class="bg-white shadow-md rounded-xl p-6">
+      <h4 class="font-semibold text-blue-800 mb-2">Chatbot Tanya Pustaka</h4>
       <p>Bantuan real-time untuk menemukan koleksi dan info layanan.</p>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-col">
-      <h4>Kontak</h4>
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white px-6 py-10 grid md:grid-cols-3 gap-8">
+    <div>
+      <h4 class="font-semibold text-lg mb-2">Kontak</h4>
       <p>Jl. Perpustakaan No.1, Kampus Kita</p>
       <p>Email: info@libsmart.ac.id</p>
       <p>Telepon: (021) 12345678</p>
     </div>
-    <div class="footer-col">
-      <h4>Ikuti Kami</h4>
+    <div>
+      <h4 class="font-semibold text-lg mb-2">Ikuti Kami</h4>
       <p>Instagram, Twitter, Facebook</p>
     </div>
-    <div class="footer-col">
-      <h4>Tautan Terkait</h4>
-      <a href="#">Syarat & Ketentuan</a><br />
-      <a href="#">Kebijakan Privasi</a>
+    <div>
+      <h4 class="font-semibold text-lg mb-2">Tautan Terkait</h4>
+      <a href="#" class="block hover:underline">Syarat & Ketentuan</a>
+      <a href="#" class="block hover:underline">Kebijakan Privasi</a>
     </div>
   </footer>
 
-  <div class="bottom-bar">
+  <div class="bg-blue-950 text-center text-gray-300 text-sm py-4">
     &copy; 2025 LibSmart. All rights reserved.
   </div>
 
