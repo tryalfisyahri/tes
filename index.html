@@ -1,103 +1,164 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perpustakaan Try Alfi Syahri</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #008080;
+    }
+
+    .logo img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #008080;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: white;
+      list-style: none;
+      padding: 10px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 8px 20px;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid #ddd;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 20px;
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">LibSmart</h1>
-    <nav class="space-x-4 hidden md:block">
-      <a href="#" class="hover:underline">Beranda</a>
-      <a href="#" class="hover:underline">Tentang</a>
-      <a href="#" class="hover:underline">Kontak</a>
-      <a href="#" class="hover:underline">Lainnya</a>
-    </nav>
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="library-icon.png" alt="Library">
+      Library
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li class="dropdown">
+        <a href="#">Lainnya</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Koleksi</a></li>
+          <li><a href="#">Layanan</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-/* Dark Mode Styles */
-body.dark {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-}
-    <div class="theme-toggle" onclick="toggleTheme()">🌞</div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white text-center py-16 px-4">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4">Akses Mudah, Ilmu Lebih Dekat!</h2>
-    <p class="mb-6 max-w-xl mx-auto">Latakilan datap akses sejalahaht akses terbaik Anda.</p>
-    <div class="space-x-4">
-      <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full">Cari Buku</button>
-      <button class="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-700">Login Mahasiswa</button>
-    </div>
-  </section>
-
-  <!-- Statistik -->
-  <section class="py-10 px-6 bg-white grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-    <div><h3 class="text-2xl font-semibold text-blue-900">50.000+</h3><p>Koleksi Buku</p></div>
-    <div><h3 class="text-2xl font-semibold text-blue-900">1.200.000+</h3><p>Total Pengunjung</p></div>
-    <div><h3 class="text-2xl font-semibold text-blue-900">5.000+</h3><p>E-Jurnal</p></div>
-    <div><h3 class="text-2xl font-semibold text-blue-900">8.000+</h3><p>Skripsi</p></div>
-  </section>
-
-  <!-- Fitur Unggulan -->
-  <section class="py-12 px-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-    <div class="bg-white shadow-md rounded-xl p-6">
-      <h4 class="font-semibold text-blue-800 mb-2">Rekomendasi Buku AI</h4>
-      <p>Teknologi AI bantu cari referensi terbaik sesuai kebutuhan Anda.</p>
-    </div>
-    <div class="bg-white shadow-md rounded-xl p-6">
-      <h4 class="font-semibold text-blue-800 mb-2">Koleksi e-Jurnal Dosen</h4>
-      <p>Akses langsung publikasi dosen dari berbagai disiplin ilmu.</p>
-    </div>
-    <div class="bg-white shadow-md rounded-xl p-6">
-      <h4 class="font-semibold text-blue-800 mb-2">Riwayat Pinjaman Otomatis</h4>
-      <p>Lihat dan kelola histori peminjaman buku Anda.</p>
-    </div>
-    <div class="bg-white shadow-md rounded-xl p-6">
-      <h4 class="font-semibold text-blue-800 mb-2">Chatbot Tanya Pustaka</h4>
-      <p>Bantuan real-time untuk menemukan koleksi dan info layanan.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white px-6 py-10 grid md:grid-cols-3 gap-8">
-    <div>
-      <h4 class="font-semibold text-lg mb-2">Kontak</h4>
-      <p>Jl. Perpustakaan No.1, Kampus Kita</p>
-      <p>Email: info@libsmart.ac.id</p>
-      <p>Telepon: (021) 12345678</p>
-    </div>
-    <div>
-      <h4 class="font-semibold text-lg mb-2">Ikuti Kami</h4>
-      <p>Instagram, Twitter, Facebook</p>
-    </div>
-    <div>
-      <h4 class="font-semibold text-lg mb-2">Tautan Terkait</h4>
-      <a href="#" class="block hover:underline">Syarat & Ketentuan</a>
-      <a href="#" class="block hover:underline">Kebijakan Privasi</a>
-    </div>
-  </footer>
-
-  <div class="bg-blue-950 text-center text-gray-300 text-sm py-4">
-    &copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.
-  </div>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      const toggle = document.querySelector('.theme-toggle');
-      toggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
-    }
-  </script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
