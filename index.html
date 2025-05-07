@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LibSmart - Perpustakaan Cerdas</title>
+  <title>Perpustakaan Try Alfi Syahri - Perpustakaan Cerdas</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -17,10 +17,11 @@
     <h1 class="text-2xl font-bold">LibSmart</h1>
     <nav class="space-x-4 hidden md:block">
       <a href="#" class="hover:underline">Beranda</a>
-      <a href="#" class="hover:underline">Koleksi</a>
-      <a href="#" class="hover:underline">Layanan</a>
       <a href="#" class="hover:underline">Tentang</a>
+      <a href="#" class="hover:underline">Kontak</a>
+      <a href="#" class="hover:underline">Lainnya</a>
     </nav>
+    <div class="theme-toggle" onclick="toggleTheme()">🌞</div>
   </header>
 
   <!-- Hero Section -->
@@ -81,8 +82,16 @@
   </footer>
 
   <div class="bg-blue-950 text-center text-gray-300 text-sm py-4">
-    &copy; 2025 LibSmart. All rights reserved.
+    &copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.
   </div>
+  
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const toggle = document.querySelector('.theme-toggle');
+      toggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
+    }
+  </script>
 
 </body>
 </html>
