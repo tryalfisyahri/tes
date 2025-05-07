@@ -1,220 +1,212 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Library</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LibSmart - Perpustakaan Cerdas</title>
   <style>
-    :root {
-      --primary: #009688;
-      --text-dark: #222;
-      --text-light: #fff;
-      --bg-light: #fff;
-      --bg-dark: #222;
-    }
-
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      transition: background 0.3s, color 0.3s;
+      background-color: #f9f9f9;
+      line-height: 1.6;
     }
-
     header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      padding: 15px 30px;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--primary);
-      display: flex;
       align-items: center;
     }
-
-    .logo::before {
-      content: "📚";
-      margin-right: 10px;
+    header h1 {
+      font-size: 24px;
     }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
     nav a {
+      color: white;
+      margin-left: 15px;
       text-decoration: none;
-      color: #333;
       font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      top: 35px;
-      left: 0;
-      min-width: 150px;
-      z-index: 10;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 15px;
-      color: #333;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f5f5f5;
-    }
-
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 20px;
     }
 
     .hero {
-      background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 20px;
+      background: linear-gradient(#0050a0, #003366);
+      color: white;
       text-align: center;
-      color: white;
-      position: relative;
+      padding: 60px 20px;
     }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+    .hero h2 {
+      font-size: 32px;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: #00bfa5;
-    }
-
     .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
+      margin: 10px 0 20px;
     }
-
-    .hero-buttons a {
-      text-decoration: none;
-      border: 1px solid white;
-      color: white;
+    .hero button {
+      margin: 10px;
       padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 4px;
-      transition: background 0.3s, color 0.3s;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #ff8000;
+      color: white;
+    }
+    .btn-secondary {
+      background: white;
+      color: #003366;
+      border: 1px solid #003366;
     }
 
-    .hero-buttons a:hover {
-      background-color: white;
-      color: #009688;
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background: #fff;
+      padding: 40px 10px;
+    }
+    .stat {
+      flex: 1 1 150px;
+      text-align: center;
+      margin: 10px;
+    }
+    .stat h3 {
+      color: #003366;
+      font-size: 24px;
     }
 
-    /* Dark Mode Styles */
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .feature {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .feature h4 {
+      color: #003366;
+      margin-bottom: 10px;
     }
 
-    body.dark header {
-      background-color: #333;
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
-
-    body.dark nav a {
+    .footer-col {
+      flex: 1 1 200px;
+      margin-bottom: 20px;
+    }
+    .footer-col h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 14px;
       color: #ddd;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+    .bottom-bar {
+      text-align: center;
+      padding: 10px;
+      background-color: #002244;
+      color: #ccc;
+      font-size: 14px;
     }
 
-    body.dark nav a:hover {
-      color: #00e6c3;
-    }
-
-    body.dark .dropdown-content {
-      background-color: #444;
-    }
-
-    body.dark .dropdown-content a {
-      color: #eee;
-    }
-
-    body.dark .dropdown-content a:hover {
-      background-color: #555;
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero h2 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">Library</div>
+    <h1>LibSmart</h1>
     <nav>
       <a href="#">Beranda</a>
+      <a href="#">Koleksi</a>
+      <a href="#">Layanan</a>
       <a href="#">Tentang</a>
-      <a href="#">Kontak</a>
-      <div class="dropdown">
-        <a href="#">Lainnya</a>
-        <div class="dropdown-content">
-          <a href="#">Koleksi</a>
-          <a href="#">Layanan</a>
-        </div>
-      </div>
     </nav>
-    <div class="theme-toggle" onclick="toggleTheme()">🌞</div>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>Selamat Datang di Perpustakaan</h1>
-      <p>Jelajahi koleksi kami yang beragam, temukan acara mendatang, dan selami dunia pengetahuan.</p>
-      <div class="hero-buttons">
-        <a href="#">Kunjungi Open Library</a>
-        <a href="#">Lihat Buku Unggulan</a>
-        <a href="#">Lihat Event</a>
-      </div>
+    <h2>Akses Mudah, Ilmu Lebih Dekat!</h2>
+    <p>Latakilan datap akses sejalahaht akses terbaik Anda.</p>
+    <button class="btn-primary">Cari Buku</button>
+    <button class="btn-secondary">Login Mahasiswa</button>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><h3>50.000+</h3><p>Koleksi Buku</p></div>
+    <div class="stat"><h3>1.200.000+</h3><p>Total Pengunjung</p></div>
+    <div class="stat"><h3>5.000+</h3><p>E-Jurnal</p></div>
+    <div class="stat"><h3>8.000+</h3><p>Skripsi</p></div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h4>Rekomendasi Buku AI</h4>
+      <p>Teknologi AI bantu cari referensi terbaik sesuai kebutuhan Anda.</p>
+    </div>
+    <div class="feature">
+      <h4>Koleksi e-Jurnal Dosen</h4>
+      <p>Akses langsung publikasi dosen dari berbagai disiplin ilmu.</p>
+    </div>
+    <div class="feature">
+      <h4>Riwayat Pinjaman Otomatis</h4>
+      <p>Lihat dan kelola histori peminjaman buku Anda.</p>
+    </div>
+    <div class="feature">
+      <h4>Chatbot Tanya Pustaka</h4>
+      <p>Bantuan real-time untuk menemukan koleksi dan info layanan.</p>
     </div>
   </section>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      const toggle = document.querySelector('.theme-toggle');
-      toggle.textContent = document.body.classList.contains('dark') ? '🌙' : '🌞';
-    }
-  </script>
+  <footer>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <p>Jl. Perpustakaan No.1, Kampus Kita</p>
+      <p>Email: info@libsmart.ac.id</p>
+      <p>Telepon: (021) 12345678</p>
+    </div>
+    <div class="footer-col">
+      <h4>Ikuti Kami</h4>
+      <p>Instagram, Twitter, Facebook</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tautan Terkait</h4>
+      <a href="#">Syarat & Ketentuan</a><br />
+      <a href="#">Kebijakan Privasi</a>
+    </div>
+  </footer>
+
+  <div class="bottom-bar">
+    &copy; 2025 LibSmart. All rights reserved.
+  </div>
 
 </body>
 </html>
