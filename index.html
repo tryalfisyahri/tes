@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perpustakaan Try Alfi Syahri - Perpustakaan Cerdas</title>
+  <title>Perpustakaan Try Alfi Syahri</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -21,6 +21,12 @@
       <a href="#" class="hover:underline">Kontak</a>
       <a href="#" class="hover:underline">Lainnya</a>
     </nav>
+
+/* Dark Mode Styles */
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
     <div class="theme-toggle" onclick="toggleTheme()">🌞</div>
   </header>
 
@@ -84,7 +90,7 @@
   <div class="bg-blue-950 text-center text-gray-300 text-sm py-4">
     &copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.
   </div>
-  
+
   <script>
     function toggleTheme() {
       document.body.classList.toggle('dark');
