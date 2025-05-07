@@ -1,308 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage - Perpustakaan Try Alfi Syahri</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <style>
-       body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(270deg, #e7e8e3, #d9dcd6, #6e8682, #455a4f);
-    background-size: 400% 400%;
-    animation: gradientFlash 6s ease infinite;
-    color: #244747;
-}
-@keyframes gradientFlash {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-        header {
-            background-color: #455a4f;
-            color: #e7e8e3;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 3px solid #6e866e;
-            position: relative;
-        }
-        .icon-container {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-        }
-        .icon-container img {
-            width: 60px;
-            height: 60px;
-            animation: floating 3s ease-in-out infinite;
-        }
-        @keyframes floating {
-           0% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0); }
-        }
-        nav a {
-            color:#6e866e;
-            margin: left 15px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: #e7e8e3;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: justify;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #455a4f;
-            color: #e7e8e3;
-            position: relative;    
-        }
-        .last-edited {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        .last-edited img {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            animation: spin 2s linear infinite;
-        }
-        @keyframes time {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(0deg); }
-        }
-        .book-collection {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .book {
-            display: flex;
-            align-items: center;
-            background: #d9dcd6;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .book img {
-            width: 120px;
-            height: 170px;
-            border-radius: 5px;
-            margin-right: 15px;
-        }
-        .book-info {
-            flex: 1;
-        }
-        .book-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-        .book-author {
-            font-size: 14px;
-            color: #666;
-        }
-        .book-desc {
-            font-size: 14px;
-            color: #555;
-            margin: 10px 0;
-        }
-        .read-button {
-            display: inline-block;
-            padding: 8px 12px;
-            background: #6e866e;
-            color: #e7e8e3;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .read-button:hover {
-            background: #455a4f;
-	}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda - LibSmart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <script>
-        window.onload = function() {
-            Swal.fire({
-                title: "Halooo!",
-                text: "Selamat datang di Perpustakaan Try Alfi Syahri. Temukan berbagai buku digital menarik di sini!",
-                icon: "success",
-                confirmButtonText: "Mulai Menjelajah"
-            });
-        };
-    </script>    
-    <div style="position: fixed; bottom: 0px;left: 10px;width:130px;height:160px;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitw15AaPnjyjXT9H3pcOPPzsD7h2EVW6PUzJeXY3mcPn5q4ZnjCCyNzpL0OKqj2bSo51TU7qYg_tzxm44lUaSMko5NB2P-X8rdd8tXc9aPLQPDWIWxfQqYU-fQHCtgpRpqOCX5X32toocg/s1600/halo.gif" /></div>
-    <header>
-        <div class="icon-container">
-            <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Library Icon">
-        </div>
-        <h1>Perpustakaan Try Alfi Syahri</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-		<li><a href="tabel pintar.php">Tabel X</a></li>
-		<li><a href="formulir.php">Form</a></li>    
-            </ul>
-        </nav>
-    </header>
+<body class="bg-[#e5edea] text-gray-800">
 
-    <section id="home">
-        <h2>Selamat Datang di Website Perpustakaan!</h2>
-        <p> 
-            Halo! Selamat datang di Perpustakaan Try Alfi Syahri. Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan. 
-            
-            Di sini, kamu akan menemukan berbagai proyek menarik yang berhubungan dengan pengembangan sistem perpustakaan berbasis web. 
-            Website ini juga berfungsi sebagai portofolio pembelajaran, dimana setiap tugas yang diselesaikan akan tersimpan dan dapat diakses kembali untuk referensi atau pengembangan lebih lanjut.
-            Dengan adanya dokumentasi ini, diharapkan bisa membantu mahasiswa memahami bagaimana sebuah sistem perpustakaan online dikembangkan.</p>
-        <p> 
-            Selain itu, website ini bisa menjadi sumber inspirasi bagi siapa saja yang tertarik dengan dunia web development, terutama yang berfokus pada sistem informasi perpustakaan. 
-            Nantinya, website ini dapat terus dikembangkan dengan fitur-fitur tambahan agar lebih interaktif dan bermanfaat bagi pengguna.
-            Terima Kasih sudah berkunjung, semoga website ini bermanfaat! 📚</p></section>
+  <!-- Header -->
+  <header class="bg-[#405d58] text-white p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">LibSmart</h1>
+      <nav class="space-x-4">
+        <a href="#" class="hover:underline font-semibold">Beranda</a>
+        <a href="koleksi.html" class="hover:underline">Koleksi</a>
+        <a href="layanan.html" class="hover:underline">Layanan</a>
+        <a href="tentang.html" class="hover:underline">Tentang</a>
+      </nav>
+    </div>
+  </header>
 
-    <section id="home">
-        <h3>Collaboration</h3>
-        <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="bg-[#739891] text-white py-16 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Akses Mudah, Ilmu Lebih Dekat!</h2>
+      <p class="mb-6">Latakilan datap akses sejalahtur akusat.</p>
+      <div class="space-x-4">
+        <a href="#koleksi" class="bg-[#d2e4db] text-[#2c4b47] font-semibold px-6 py-2 rounded hover:bg-[#bfd6cd]">Cari Buku</a>
+        <a href="#" class="bg-white text-[#2c4b47] font-semibold px-6 py-2 rounded hover:bg-gray-100">Login Mahasiswa</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="collection">
-        <h2><center>Koleksi Buku Digital</center></h2>
-        <p><center><input type="text" id="search" placeholder="Cari buku..." onkeyup="searchBook()"></center></p>
-        
-            <!-- Buku 1 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/8c/50/9a/8c509a91adca718140857ef57730f1d9.jpg" alt="Cover Buku 1">
-                <div class="book-info">
-                    <div class="book-title">Atomic Habits</div>
-                    <div class="book-author">James Clear</div>
-                    <div class="book-desc">Bagaimana perubahan kecil bisa membawa dampak besar dalam hidup? Dalam Atomic Habits, James Clear mengungkapkan cara membangun kebiasaan baik, menghilangkan kebiasaan buruk, dan menciptakan sistem yang efektif untuk mencapai kesuksesan jangka panjang.
-                        Buku ini menjelaskan bahwa kebiasaan adalah hasil dari proses kecil yang berulang setiap hari. Dengan menerapkan The Four Laws of Behavior Change membuat kebiasaan lebih jelas, menarik, mudah, dan memuaskan.
-                        kita dapat membentuk pola hidup yang lebih produktif dan positif. 
-                        Clear juga menekankan pentingnya perubahan identitas dalam membangun kebiasaan, yaitu dengan berfokus pada siapa kita ingin menjadi, bukan hanya pada hasil yang ingin dicapai. 
-                        Dengan pendekatan berbasis ilmu psikologi dan neuroscience, serta contoh nyata dari atlet, pengusaha, dan orang sukses lainnya, Atomic Habits memberikan panduan praktis bagi siapa saja yang ingin meningkatkan kualitas hidup melalui kebiasaan kecil yang konsisten.</div>
-                    <a href="https://drive.google.com/file/d/1U6uQfMpELtCyMYS8gz0qQzS9SgwI8JrJ/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-            </div>
-        
-            <!-- Buku 2 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/6b/3a/01/6b3a010fb037d130bd5e13df3c1ba18b.jpg" alt="Cover Buku 2">
-                <div class="book-info">
-                    <div class="book-title">Filosofi Teras</div>
-                    <div class="book-author">Henry Manampiring</div>
-                    <div class="book-desc">Dalam Filosofi Teras, Henry Manampiring memperkenalkan filsafat Stoisisme, ajaran bijak dari zaman Yunani-Romawi yang masih relevan untuk kehidupan saat ini.
-                        Stoisisme mengajarkan kita untuk fokus pada hal-hal yang bisa kita kendalikan dan menerima dengan tenang apa yang berada di luar kendali kita. Dengan prinsip-prinsip seperti dikotomi kendali, latihan mental, dan perspektif terhadap kebahagiaan, buku ini membantu pembaca menghadapi tantangan hidup dengan lebih rasional dan tenang.
-                        Ditulis dengan gaya ringan dan disertai contoh kehidupan sehari-hari, Filosofi Teras cocok bagi siapa saja yang ingin menjalani hidup dengan lebih damai, bebas dari kecemasan berlebihan, dan lebih fokus pada hal-hal yang benar-benar penting.</div>
-                    <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-            </div>
+  <!-- Statistik -->
+  <section class="py-10 px-4 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+    <div>
+      <p class="text-[#4d7069] text-2xl font-bold">50.000+</p>
+      <p class="text-sm text-gray-600">Koleksi Buku</p>
+    </div>
+    <div>
+      <p class="text-[#4d7069] text-2xl font-bold">1.200.000+</p>
+      <p class="text-sm text-gray-600">Total Pengunjung</p>
+    </div>
+    <div>
+      <p class="text-[#4d7069] text-2xl font-bold">5.000+</p>
+      <p class="text-sm text-gray-600">E-Jurnal</p>
+    </div>
+    <div>
+      <p class="text-[#4d7069] text-2xl font-bold">8.000+</p>
+      <p class="text-sm text-gray-600">Skripsi</p>
+    </div>
+  </section>
 
-            <!-- Buku 3 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/1200x/fe/ea/b7/feeab7b37152f25ecf2d8b0effb69f28.jpg" alt="Cover Buku 3">
-                <div class="book-info">
-                    <div class="book-title">Sejarah Dunia yang Disembunyikan</div>
-                    <div class="book-author">Jonathan Black</div>
-                    <div class="book-desc">Apa yang sebenarnya terjadi di balik peristiwa-peristiwa besar dalam sejarah dunia? Dalam Sejarah Dunia yang Disembunyikan, Jonathan Black mengajak pembaca melihat sejarah dari perspektif yang berbeda, mengungkap berbagai teori alternatif tentang asal-usul peradaban, peran organisasi rahasia, serta pengaruh mistisisme dan esoterisme dalam perjalanan umat manusia.
-                        Buku ini mengeksplorasi bagaimana kelompok-kelompok seperti Freemason, Illuminati, dan aliran-aliran spiritual tertentu diyakini memiliki pengaruh besar terhadap politik, sains, dan budaya dunia. 
-                        Dengan pendekatan yang memadukan sejarah, filsafat, dan teori konspirasi, Jonathan Black menyajikan narasi yang menggugah rasa ingin tahu dan mendorong pembaca untuk mempertanyakan apa yang selama ini dianggap sebagai kebenaran sejarah.</div>
-                    <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-            </div>
-        
-            <!-- Buku 4 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/9a/bb/61/9abb61fcf68afd124375a82dfd02ca6a.jpg" alt="Cover Buku 4">
-                <div class="book-info">
-                    <div class="book-title">Laut Bercerita</div>
-                    <div class="book-author">Leila S. Chudori</div>
-                    <div class="book-desc">Di era rezim Orde Baru, di tengah penindasan dan ketakutan, Laut Bercerita mengisahkan perjuangan, persahabatan, dan kehilangan melalui sudut pandang Biru Laut, seorang aktivis mahasiswa yang berjuang melawan ketidakadilan di Indonesia tahun 1990-an. Bersama kawan-kawannya, Laut terlibat dalam gerakan bawah tanah yang memperjuangkan kebebasan berbicara dan hak asasi manusia. 
-                        Namun, idealismenya harus dibayar mahal ketika ia diculik dan mengalami penyiksaan brutal oleh aparat negara.</div>
-                    <a href="https://drive.google.com/file/d/1d337qR1BBp2b8oGhb1C9ft7Fn6madrJs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-            </div>
+  <!-- Koleksi Buku -->
+  <section id="koleksi" class="py-10 px-4 md:px-10 max-w-6xl mx-auto space-y-8">
+    <!-- Buku 1 -->
+    <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md p-4 gap-4">
+      <img src="https://upload.wikimedia.org/wikipedia/id/6/6f/Sejarah_Dunia_yang_Disemubunyikan.jpg" alt="Sejarah Dunia" class="w-32 h-auto object-cover rounded">
+      <div>
+        <h2 class="text-xl font-semibold">Sejarah Dunia yang Disembunyikan</h2>
+        <p class="text-sm text-gray-600 mb-2">Jonathan Black</p>
+        <p class="text-gray-700 text-justify mb-3">Apa yang sebenarnya terjadi di balik peristiwa-peristiwa besar dalam sejarah dunia? Buku ini mengeksplorasi teori alternatif, pengaruh mistisisme, dan kelompok-kelompok seperti Freemason dan Illuminati.</p>
+        <button class="bg-[#7fa094] text-white px-4 py-2 rounded hover:bg-[#6d8c80]">Baca Sekarang</button>
+      </div>
+    </div>
 
-            <!-- Buku 5 -->
-            <div class="book">
-                <img src="https://i.pinimg.com/736x/e2/1b/43/e21b43796903145c4ed9527f1ebb3f4a.jpg" alt="Cover Buku 5">
-                <div class="book-info">
-                    <div class="book-title">Pulang</div>
-                    <div class="book-author">Leila S. Chudori</div>
-                    <div class="book-desc">Buku Pulang karya Leila S. Chudori mengisahkan tentang para eksil politik Indonesia yang terpaksa hidup di pengasingan akibat peristiwa G30S 1965. Novel ini berpusat pada Dimas Suryo, seorang jurnalis yang harus meninggalkan tanah airnya setelah rezim Orde Baru berkuasa. 
-                        Bersama rekan-rekannya, ia terdampar di Paris dan berusaha membangun kehidupan baru, meski dihantui rasa rindu akan Indonesia yang tak bisa ia kunjungi.
-                        Di sisi lain, cerita juga mengikuti perjalanan Lintang Utara, putri Dimas, yang tumbuh besar di Prancis dan berusaha memahami akar sejarah keluarganya. 
-                        Ketika ia mendapatkan kesempatan untuk kembali ke Indonesia, ia dihadapkan pada kenyataan yang kompleks tentang negara yang ayahnya tinggalkan dan sejarah yang selama ini disembunyikan.</div>
-                    <a href="https://drive.google.com/file/d/1e3xSFjFrsF8VWaFaRRqdTKC1Jn5zpYzs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
-            </div></section>
-	
-<section id="event-perpustakaan" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">📅 Event Perpustakaan</h2>
+    <!-- Buku 2 -->
+    <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md p-4 gap-4">
+      <img src="https://upload.wikimedia.org/wikipedia/id/2/2d/Laut_Bercerita_sampul.jpg" alt="Laut Bercerita" class="w-32 h-auto object-cover rounded">
+      <div>
+        <h2 class="text-xl font-semibold">Laut Bercerita</h2>
+        <p class="text-sm text-gray-600 mb-2">Leila S. Chudori</p>
+        <p class="text-gray-700 text-justify mb-3">Mengisahkan perjuangan mahasiswa melawan ketidakadilan pada masa Orde Baru. Buku ini penuh nilai kemanusiaan, pengorbanan, dan perjuangan untuk kebebasan berbicara.</p>
+        <button class="bg-[#7fa094] text-white px-4 py-2 rounded hover:bg-[#6d8c80]">Baca Sekarang</button>
+      </div>
+    </div>
 
-      <div class="row g-4">
+    <!-- Buku 3 -->
+    <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md p-4 gap-4">
+      <img src="https://upload.wikimedia.org/wikipedia/id/d/dc/Pulang_sampul.jpg" alt="Pulang" class="w-32 h-auto object-cover rounded">
+      <div>
+        <h2 class="text-xl font-semibold">Pulang</h2>
+        <p class="text-sm text-gray-600 mb-2">Leila S. Chudori</p>
+        <p class="text-gray-700 text-justify mb-3">Tentang para eksil politik Indonesia yang hidup di pengasingan. Cerita penuh emosi tentang keluarga, sejarah, dan identitas bangsa.</p>
+        <button class="bg-[#7fa094] text-white px-4 py-2 rounded hover:bg-[#6d8c80]">Baca Sekarang</button>
+      </div>
+    </div>
+  </section>
 
-        <!-- Event 1 -->
-        <div class="col-md-6">
-          <div class="card h-100 border-start border-primary border-4 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title text-primary">Bedah Buku "Laut Bercerita"</h5>
-              <p class="card-text">
-                <strong>Tanggal:</strong> 10 Mei 2025<br>
-                <strong>Waktu:</strong> 10.00 - 12.00 WIB<br>
-                <strong>Tempat:</strong> Ruang Baca Utama
-              </p>
-              <p class="card-text">Diskusi seru bersama penulis dan pecinta sastra. Terbuka untuk umum!</p>
-            </div>
+  <!-- Footer -->
+  <footer class="bg-[#405d58] text-white p-6 text-center mt-10">
+    &copy; 2025 LibSmart. Seluruh hak cipta dilindungi.
+  </footer>
 
-        <!-- Event 2 -->
-        <div class="col-md-6">
-          <div class="card h-100 border-start border-success border-4 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title text-success">Workshop Literasi Digital</h5>
-              <p class="card-text">
-                <strong>Tanggal:</strong> 17 Mei 2025<br>
-                <strong>Waktu:</strong> 13.00 - 15.00 WIB<br>
-                <strong>Tempat:</strong> Lab Komputer
-              </p>
-              <p class="card-text">Belajar mengelola informasi digital secara efektif. Gratis dan dapat sertifikat!</p>
-	</div></section>
-		  
-    <script>
-        function searchBook() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let books = document.querySelectorAll(".book");
-            books.forEach(book => {
-                let title = book.getAttribute("data-title").toLowerCase();
-                if (title.includes(input)) {
-                    book.style.display = "block";
-                } else {
-                    book.style.display = "none";
-                }
-            });
-        }
-    </script>
-
-    <div class="last-edited">
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png" alt="Clock Icon">
-    <span>Terakhir Diedit: 18 Maret 2025, 14:30 WIB</span></div>
-    
-    <script>// Menampilkan waktu terakhir kali halaman dimuat dengan ikon berputar
-    document.getElementById("last-edited").textContent = "Terakhir Diedit: " + new Date().toLocaleString("id-ID");
-    </script>
-
-    <footer>
-        <p>&copy; 2025 Perpustakaan Try Alfi Syahri</p>
-    </footer>
 </body>
 </html>
