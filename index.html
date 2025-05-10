@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perpustakaan Digital - Imelda Rizki Aulia</title>
+  <title>Perpustakaan Try Alfi Syahri</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
@@ -12,7 +12,7 @@
       background-color: #f4f4f4;
     }
     header {
-      background: linear-gradient(to right, #3f51b5, #1a237e);
+      background: linear-gradient(270deg, #e7e8e3, #d9dcd6, #6e8682, #455a4f);
       padding: 1rem 2rem;
       color: white;
       display: flex;
@@ -53,7 +53,7 @@
     .search-box button {
       padding: 1rem;
       border: none;
-      background-color: #0066ff;
+      background-color: #6e8682;
       color: white;
       border-radius: 0 4px 4px 0;
       cursor: pointer;
@@ -73,7 +73,7 @@
       margin-bottom: 1rem;
     }
     footer {
-      background-color: #1a237e;
+      background-color: #455a4f;
       color: white;
       padding: 2rem;
       display: flex;
@@ -101,10 +101,48 @@
     .copyright {
       text-align: center;
       padding: 1rem;
-      background-color: #0d1333;
+      background-color: #455a4f;
       color: #ccc;
       font-size: 0.8rem;
     }
+        .book-collection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .book {
+            display: flex;
+            align-items: center;
+            background: #d9dcd6;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .book img {
+            width: 120px;
+            height: 170px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .book-info {
+            flex: 1;
+        }
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .book-author {
+            font-size: 14px;
+            color: #666;
+        }
+        .book-desc {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
   </style>
 </head>
 <body>
@@ -112,19 +150,18 @@
     <h1><i class="fas fa-book"></i> Perpustakaan Digital</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Formulir</a></li>
-        <li><a href="#">MathMatrix</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about,html">About Me</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#">Lainnya</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="search-section">
-    <h2><i class="fas fa-layer-group"></i> Temukan Buku/Jurnal</h2>
+    <h2><i class="fas fa-layer-group"></i> Temukan Koleksi</h2>
     <div class="search-box">
-      <input type="text" placeholder="Cari buku/jurnal...">
+      <input type="text" placeholder="Cari koleksi...">
       <button><i class="fas fa-search"></i> Search</button>
     </div>
   </section>
@@ -147,6 +184,70 @@
     </div>
   </section>
 
+  <section class="book-collection">
+    <!-- Buku 1 -->
+    <div class="book">
+        <img src="https://i.pinimg.com/736x/8c/50/9a/8c509a91adca718140857ef57730f1d9.jpg" alt="Cover Buku 1">
+        <div class="book-info">
+            <div class="book-title">Atomic Habits</div>
+            <div class="book-author">James Clear</div>
+            <div class="book-desc">Bagaimana perubahan kecil bisa membawa dampak besar dalam hidup? Dalam Atomic Habits, James Clear mengungkapkan cara membangun kebiasaan baik, menghilangkan kebiasaan buruk, dan menciptakan sistem yang efektif untuk mencapai kesuksesan jangka panjang.
+                Buku ini menjelaskan bahwa kebiasaan adalah hasil dari proses kecil yang berulang setiap hari. Dengan menerapkan The Four Laws of Behavior Change membuat kebiasaan lebih jelas, menarik, mudah, dan memuaskan.
+                kita dapat membentuk pola hidup yang lebih produktif dan positif. 
+                Clear juga menekankan pentingnya perubahan identitas dalam membangun kebiasaan, yaitu dengan berfokus pada siapa kita ingin menjadi, bukan hanya pada hasil yang ingin dicapai. 
+                Dengan pendekatan berbasis ilmu psikologi dan neuroscience, serta contoh nyata dari atlet, pengusaha, dan orang sukses lainnya, Atomic Habits memberikan panduan praktis bagi siapa saja yang ingin meningkatkan kualitas hidup melalui kebiasaan kecil yang konsisten.</div>
+            <a href="https://drive.google.com/file/d/1U6uQfMpELtCyMYS8gz0qQzS9SgwI8JrJ/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+    </div>
+
+    <!-- Buku 2 -->
+    <div class="book">
+        <img src="https://i.pinimg.com/736x/6b/3a/01/6b3a010fb037d130bd5e13df3c1ba18b.jpg" alt="Cover Buku 2">
+        <div class="book-info">
+            <div class="book-title">Filosofi Teras</div>
+            <div class="book-author">Henry Manampiring</div>
+            <div class="book-desc">Dalam Filosofi Teras, Henry Manampiring memperkenalkan filsafat Stoisisme, ajaran bijak dari zaman Yunani-Romawi yang masih relevan untuk kehidupan saat ini.
+                Stoisisme mengajarkan kita untuk fokus pada hal-hal yang bisa kita kendalikan dan menerima dengan tenang apa yang berada di luar kendali kita. Dengan prinsip-prinsip seperti dikotomi kendali, latihan mental, dan perspektif terhadap kebahagiaan, buku ini membantu pembaca menghadapi tantangan hidup dengan lebih rasional dan tenang.
+                Ditulis dengan gaya ringan dan disertai contoh kehidupan sehari-hari, Filosofi Teras cocok bagi siapa saja yang ingin menjalani hidup dengan lebih damai, bebas dari kecemasan berlebihan, dan lebih fokus pada hal-hal yang benar-benar penting.</div>
+            <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+    </div>
+
+    <!-- Buku 3 -->
+    <div class="book">
+        <img src="https://i.pinimg.com/1200x/fe/ea/b7/feeab7b37152f25ecf2d8b0effb69f28.jpg" alt="Cover Buku 3">
+        <div class="book-info">
+            <div class="book-title">Sejarah Dunia yang Disembunyikan</div>
+            <div class="book-author">Jonathan Black</div>
+            <div class="book-desc">Apa yang sebenarnya terjadi di balik peristiwa-peristiwa besar dalam sejarah dunia? Dalam Sejarah Dunia yang Disembunyikan, Jonathan Black mengajak pembaca melihat sejarah dari perspektif yang berbeda, mengungkap berbagai teori alternatif tentang asal-usul peradaban, peran organisasi rahasia, serta pengaruh mistisisme dan esoterisme dalam perjalanan umat manusia.
+                Buku ini mengeksplorasi bagaimana kelompok-kelompok seperti Freemason, Illuminati, dan aliran-aliran spiritual tertentu diyakini memiliki pengaruh besar terhadap politik, sains, dan budaya dunia. 
+                Dengan pendekatan yang memadukan sejarah, filsafat, dan teori konspirasi, Jonathan Black menyajikan narasi yang menggugah rasa ingin tahu dan mendorong pembaca untuk mempertanyakan apa yang selama ini dianggap sebagai kebenaran sejarah.</div>
+            <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+    </div>
+
+    <!-- Buku 4 -->
+    <div class="book">
+        <img src="https://i.pinimg.com/736x/9a/bb/61/9abb61fcf68afd124375a82dfd02ca6a.jpg" alt="Cover Buku 4">
+        <div class="book-info">
+            <div class="book-title">Laut Bercerita</div>
+            <div class="book-author">Leila S. Chudori</div>
+            <div class="book-desc">Di era rezim Orde Baru, di tengah penindasan dan ketakutan, Laut Bercerita mengisahkan perjuangan, persahabatan, dan kehilangan melalui sudut pandang Biru Laut, seorang aktivis mahasiswa yang berjuang melawan ketidakadilan di Indonesia tahun 1990-an. Bersama kawan-kawannya, Laut terlibat dalam gerakan bawah tanah yang memperjuangkan kebebasan berbicara dan hak asasi manusia. 
+                Namun, idealismenya harus dibayar mahal ketika ia diculik dan mengalami penyiksaan brutal oleh aparat negara.</div>
+            <a href="https://drive.google.com/file/d/1d337qR1BBp2b8oGhb1C9ft7Fn6madrJs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+    </div>
+
+    <!-- Buku 5 -->
+    <div class="book">
+        <img src="https://i.pinimg.com/736x/e2/1b/43/e21b43796903145c4ed9527f1ebb3f4a.jpg" alt="Cover Buku 5">
+        <div class="book-info">
+            <div class="book-title">Pulang</div>
+            <div class="book-author">Leila S. Chudori</div>
+            <div class="book-desc">Buku Pulang karya Leila S. Chudori mengisahkan tentang para eksil politik Indonesia yang terpaksa hidup di pengasingan akibat peristiwa G30S 1965. Novel ini berpusat pada Dimas Suryo, seorang jurnalis yang harus meninggalkan tanah airnya setelah rezim Orde Baru berkuasa. 
+                Bersama rekan-rekannya, ia terdampar di Paris dan berusaha membangun kehidupan baru, meski dihantui rasa rindu akan Indonesia yang tak bisa ia kunjungi.
+                Di sisi lain, cerita juga mengikuti perjalanan Lintang Utara, putri Dimas, yang tumbuh besar di Prancis dan berusaha memahami akar sejarah keluarganya. 
+                Ketika ia mendapatkan kesempatan untuk kembali ke Indonesia, ia dihadapkan pada kenyataan yang kompleks tentang negara yang ayahnya tinggalkan dan sejarah yang selama ini disembunyikan.
+                <a href="https://drive.google.com/file/d/1e3xSFjFrsF8VWaFaRRqdTKC1Jn5zpYzs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+            </div>
+            </section>
+
   <footer>
     <div class="footer-section">
       <h4>Tentang Kami</h4>
@@ -162,12 +263,12 @@
     </div>
     <div class="footer-section">
       <h4>Kontak</h4>
-      <p><i class="fas fa-envelope"></i> imeldarizkiaulia07@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +62 823 7737 4443</p>
+      <p><i class="fas fa-envelope"></i> tryalfi@students.usu.ac.id</p>
+      <p><i class="fas fa-phone"></i> +62 813 7488 1310</p>
     </div>
   </footer>
 
   <div class="copyright">
-    &copy; 2025 Perpustakaan Digital Imelda Rizki Aulia. All rights reserved.
+    &copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.
   </div>
 </body>
