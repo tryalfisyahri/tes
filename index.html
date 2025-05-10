@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Harvard Library</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
     header {
       background-color: #a51c30;
       color: white;
@@ -14,38 +18,58 @@
     }
     nav {
       background-color: #333;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     nav a {
-      float: left;
-      display: block;
       color: white;
-      padding: 14px 16px;
+      padding: 14px 20px;
       text-decoration: none;
+      display: block;
     }
     nav a:hover {
       background-color: #575757;
     }
     .hero {
-      background: url('https://library.harvard.edu/themes/custom/harvard_library/images/hero-lg.jpg') center/cover no-repeat;
+      background-image: url('https://library.harvard.edu/themes/custom/harvard_library/images/hero-lg.jpg');
+      background-size: cover;
+      background-position: center;
       height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       text-align: center;
     }
     .hero h1 {
       font-size: 2.5em;
     }
     .content {
-      padding: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      color: #a51c30;
+      margin-bottom: 20px;
+    }
+    .section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .section ul li {
+      margin-bottom: 10px;
     }
     footer {
       background-color: #eee;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -68,16 +92,20 @@
   </section>
 
   <div class="content">
-    <h2>Welcome to Harvard Library</h2>
-    <p>Discover a wealth of resources, expert research support, and vibrant spaces for learning and collaboration.</p>
-    
-    <h3>Popular Resources</h3>
-    <ul>
-      <li>Library Catalog</li>
-      <li>Digital Collections</li>
-      <li>Research Support</li>
-      <li>Library Hours & Locations</li>
-    </ul>
+    <div class="section">
+      <h2>Welcome to Harvard Library</h2>
+      <p>Discover a wealth of resources, expert research support, and vibrant spaces for learning and collaboration.</p>
+    </div>
+
+    <div class="section">
+      <h2>Popular Resources</h2>
+      <ul>
+        <li>Library Catalog</li>
+        <li>Digital Collections</li>
+        <li>Research Support</li>
+        <li>Library Hours & Locations</li>
+      </ul>
+    </div>
   </div>
 
   <footer>
