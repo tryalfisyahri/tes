@@ -1,136 +1,302 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Homepage | Perpustakaan Try Alfi Syahri</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    body { font-family: 'Segoe UI', sans-serif; }
     .hero {
-      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794.jpg') no-repeat center center/cover;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
       color: white;
-      padding: 100px 20px;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 2s ease-in-out;
+    }
+    .hero .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%
+    }
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
       text-align: center;
     }
-    .icon-box {
-      text-align: center;
-      padding: 20px;
+    .search-bar input {
+      border-radius: 30px 0 0 30px;
     }
-    .icon-box i {
+    .search-bar button {
+      border-radius: 0 30px 30px 0;
+    }
+    .service-card i {
       font-size: 2rem;
       margin-bottom: 10px;
+      color: #6e8682;
     }
+    .card-img-top {
+      width: 100%;          
+      height: 500px;        
+      object-fit: cover;    
+    }
+    footer {
+      background-color: #455a4f;
+      color: white;
+      padding: 30px 0;
+    }
+    .book-collection {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .book {
+      display: flex;
+      align-items: center;
+      background: #d9dcd6;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .book img {
+      width: 120px;
+      height: 170px;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+    .book-info {
+      flex: 1;
+    }
+    .book-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .book-author {
+      font-size: 14px;
+      color: #666;
+    }
+    .book-desc {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+    }
+    .read-button {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #6e866e;
+      color: #e7e8e3;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .read-button:hover {
+      background: #455a4f;
+	}
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">Perpustakaan Try Alfi Syahri</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#koleksi">Tentang</a></li>
-          <li class="nav-item"><a class="nav-link" href="#event">Kontak</a></li>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Perpustakaan Try Alfi Syahri</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="collectionDropdown" role="button" data-bs-toggle="dropdown">
             Lainnya
           </a>
           <ul class="dropdown-menu" aria-labelledby="collectionDropdown">
-            <li><a class="dropdown-item" href="tugas.html">Maktriks</a></li>
+            <li><a class="dropdown-item" href="tugas.html">Matriks</a></li>
             <li><a class="dropdown-item" href="buku.html">Form Pengunjung</a></li>
-        </ul>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Selamat Datang di Perpustakaan Dwi Putri Aulia</h1>
+    <p class="mb-4">Akses ribuan koleksi akademik dengan mudah.</p>
+    <form class="d-flex justify-content-center search-bar">
+      <input type="text" class="form-control w-50" placeholder="Cari buku, jurnal, atau e-resource...">
+      <button class="btn btn-light ms-1"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card p-4 shadow">
+        <p>
+          Halo! 👋 Selamat datang di <strong>Perpustakaan Try Alfi Syahri</strong>. 
+        <p>
+          Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan.
+        </p>
+        <p>
+          Semoga apa yang saya bagikan bisa bermanfaat dan menambah wawasan, baik untuk saya maupun kalian yang mampir ke sini. Terima kasih sudah berkunjung!
+        </p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <section id="home" class="hero">
-    <div class="container">
-      <h1 class="display-4">Selamat Datang di Perpustakaan Try Alfi Syahri</h1>
-      <p class="lead">Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan</p>
-      <a href="#koleksi" class="btn btn-primary m-2">Telusuri Koleksi</a>
-      <a href="#event" class="btn btn-outline-light m-2">Lihat Event</a>
-    </div>
-  </section>
-
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-3 icon-box">
-          <i class="bi bi-book"></i>
-          <h5>Buku Digital</h5>
-        </div>
-        <div class="col-md-3 icon-box">
-          <i class="bi bi-people"></i>
-          <h5>Kolaborasi</h5>
-        </div>
-        <div class="col-md-3 icon-box">
-          <i class="bi bi-calendar-event"></i>
-          <h5>Event</h5>
-        </div>
-        <div class="col-md-3 icon-box">
-          <i class="bi bi-clock"></i>
-          <h5>Jam Layanan</h5>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="koleksi" class="py-5">
-    <div class="container">
-      <h2 class="mb-4 text-center">Koleksi Buku Terbaru</h2>
-      <div class="row">
-        <!-- Tambahkan buku-buku di sini -->
-        <div class="col-md-3"><div class="card"><img src="https://via.placeholder.com/150" class="card-img-top"><div class="card-body"><h5 class="card-title">Judul Buku</h5></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="https://via.placeholder.com/150" class="card-img-top"><div class="card-body"><h5 class="card-title">Judul Buku</h5></div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="event" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4 text-center">Event Terdekat</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title">Diskusi Buku: Literasi Digital</h5>
-              <p class="card-text">Tanggal: 20 Mei 2025</p>
-              <a href="#" class="btn btn-primary">Detail</a>
-            </div>
-          </div>
+<section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card p-4 shadow">
+          <h2 class="mb-4 text-center">Collaboration</h2>
+          <p>
+            Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://perpustakaan.unas.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital. 
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </section>  
 
-  <section id="kolaborasi" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">Kolaborasi</h2>
-      <p>Ingin berkolaborasi dengan perpustakaan kami? Yuk, ajukan kerja sama!</p>
-      <a href="#kontak" class="btn btn-success">Ajukan Kolaborasi</a>
-    </div>
-  </section>
+  <section id="collection">
+        <!-- Buku 1 -->
+        <div class="book">
+            <img src="https://i.pinimg.com/736x/8c/50/9a/8c509a91adca718140857ef57730f1d9.jpg" alt="Cover Buku 1">
+            <div class="book-info">
+                <div class="book-title">Atomic Habits</div>
+                <div class="book-author">James Clear</div>
+                <div class="book-desc">Bagaimana perubahan kecil bisa membawa dampak besar dalam hidup? Dalam Atomic Habits, James Clear mengungkapkan cara membangun kebiasaan baik, menghilangkan kebiasaan buruk, dan menciptakan sistem yang efektif untuk mencapai kesuksesan jangka panjang.
+                    Buku ini menjelaskan bahwa kebiasaan adalah hasil dari proses kecil yang berulang setiap hari. Dengan menerapkan The Four Laws of Behavior Change membuat kebiasaan lebih jelas, menarik, mudah, dan memuaskan.
+                    kita dapat membentuk pola hidup yang lebih produktif dan positif. 
+                    Clear juga menekankan pentingnya perubahan identitas dalam membangun kebiasaan, yaitu dengan berfokus pada siapa kita ingin menjadi, bukan hanya pada hasil yang ingin dicapai. 
+                    Dengan pendekatan berbasis ilmu psikologi dan neuroscience, serta contoh nyata dari atlet, pengusaha, dan orang sukses lainnya, Atomic Habits memberikan panduan praktis bagi siapa saja yang ingin meningkatkan kualitas hidup melalui kebiasaan kecil yang konsisten.</div>
+                <a href="https://drive.google.com/file/d/1U6uQfMpELtCyMYS8gz0qQzS9SgwI8JrJ/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+        </div>
+    
+        <!-- Buku 2 -->
+        <div class="book">
+            <img src="https://i.pinimg.com/736x/6b/3a/01/6b3a010fb037d130bd5e13df3c1ba18b.jpg" alt="Cover Buku 2">
+            <div class="book-info">
+                <div class="book-title">Filosofi Teras</div>
+                <div class="book-author">Henry Manampiring</div>
+                <div class="book-desc">Dalam Filosofi Teras, Henry Manampiring memperkenalkan filsafat Stoisisme, ajaran bijak dari zaman Yunani-Romawi yang masih relevan untuk kehidupan saat ini.
+                    Stoisisme mengajarkan kita untuk fokus pada hal-hal yang bisa kita kendalikan dan menerima dengan tenang apa yang berada di luar kendali kita. Dengan prinsip-prinsip seperti dikotomi kendali, latihan mental, dan perspektif terhadap kebahagiaan, buku ini membantu pembaca menghadapi tantangan hidup dengan lebih rasional dan tenang.
+                    Ditulis dengan gaya ringan dan disertai contoh kehidupan sehari-hari, Filosofi Teras cocok bagi siapa saja yang ingin menjalani hidup dengan lebih damai, bebas dari kecemasan berlebihan, dan lebih fokus pada hal-hal yang benar-benar penting.</div>
+                <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+        </div>
 
-  <section id="kontak" class="py-5 bg-dark text-white">
-    <div class="container">
-      <h2 class="text-center mb-4">Kontak</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <p>📍 Alamat: Jl. Contoh No.123, Kota Buku</p>
-          <p>📞 Telepon: (021) 123-4567</p>
-          <p>📧 Email: info@tryalfisyahri-library.id</p>
+        <!-- Buku 3 -->
+        <div class="book">
+            <img src="https://i.pinimg.com/1200x/fe/ea/b7/feeab7b37152f25ecf2d8b0effb69f28.jpg" alt="Cover Buku 3">
+            <div class="book-info">
+                <div class="book-title">Sejarah Dunia yang Disembunyikan</div>
+                <div class="book-author">Jonathan Black</div>
+                <div class="book-desc">Apa yang sebenarnya terjadi di balik peristiwa-peristiwa besar dalam sejarah dunia? Dalam Sejarah Dunia yang Disembunyikan, Jonathan Black mengajak pembaca melihat sejarah dari perspektif yang berbeda, mengungkap berbagai teori alternatif tentang asal-usul peradaban, peran organisasi rahasia, serta pengaruh mistisisme dan esoterisme dalam perjalanan umat manusia.
+                    Buku ini mengeksplorasi bagaimana kelompok-kelompok seperti Freemason, Illuminati, dan aliran-aliran spiritual tertentu diyakini memiliki pengaruh besar terhadap politik, sains, dan budaya dunia. 
+                    Dengan pendekatan yang memadukan sejarah, filsafat, dan teori konspirasi, Jonathan Black menyajikan narasi yang menggugah rasa ingin tahu dan mendorong pembaca untuk mempertanyakan apa yang selama ini dianggap sebagai kebenaran sejarah.</div>
+                <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+        </div>
+    
+        <!-- Buku 4 -->
+        <div class="book">
+            <img src="https://i.pinimg.com/736x/9a/bb/61/9abb61fcf68afd124375a82dfd02ca6a.jpg" alt="Cover Buku 4">
+            <div class="book-info">
+                <div class="book-title">Laut Bercerita</div>
+                <div class="book-author">Leila S. Chudori</div>
+                <div class="book-desc">Di era rezim Orde Baru, di tengah penindasan dan ketakutan, Laut Bercerita mengisahkan perjuangan, persahabatan, dan kehilangan melalui sudut pandang Biru Laut, seorang aktivis mahasiswa yang berjuang melawan ketidakadilan di Indonesia tahun 1990-an. Bersama kawan-kawannya, Laut terlibat dalam gerakan bawah tanah yang memperjuangkan kebebasan berbicara dan hak asasi manusia. 
+                    Namun, idealismenya harus dibayar mahal ketika ia diculik dan mengalami penyiksaan brutal oleh aparat negara.</div>
+                <a href="https://drive.google.com/file/d/1d337qR1BBp2b8oGhb1C9ft7Fn6madrJs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+        </div>
+
+        <!-- Buku 5 -->
+        <div class="book">
+            <img src="https://i.pinimg.com/736x/e2/1b/43/e21b43796903145c4ed9527f1ebb3f4a.jpg" alt="Cover Buku 5">
+            <div class="book-info">
+                <div class="book-title">Pulang</div>
+                <div class="book-author">Leila S. Chudori</div>
+                <div class="book-desc">Buku Pulang karya Leila S. Chudori mengisahkan tentang para eksil politik Indonesia yang terpaksa hidup di pengasingan akibat peristiwa G30S 1965. Novel ini berpusat pada Dimas Suryo, seorang jurnalis yang harus meninggalkan tanah airnya setelah rezim Orde Baru berkuasa. 
+                    Bersama rekan-rekannya, ia terdampar di Paris dan berusaha membangun kehidupan baru, meski dihantui rasa rindu akan Indonesia yang tak bisa ia kunjungi.
+                    Di sisi lain, cerita juga mengikuti perjalanan Lintang Utara, putri Dimas, yang tumbuh besar di Prancis dan berusaha memahami akar sejarah keluarganya. 
+                    Ketika ia mendapatkan kesempatan untuk kembali ke Indonesia, ia dihadapkan pada kenyataan yang kompleks tentang negara yang ayahnya tinggalkan dan sejarah yang selama ini disembunyikan.</div>
+                <a href="https://drive.google.com/file/d/1e3xSFjFrsF8VWaFaRRqdTKC1Jn5zpYzs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+        </div></section>
+
+<section class="container py-5">
+  <h2 class="text-center mb-4">🗓 Live Events</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+      <div class="card h-100 shadow">
+        <img src="event 1.jpg" class="card-img-top" alt="Webinar Literasi Digital">
+        <div class="card-body">
+          <h5 class="card-title">Pemilihan Duta Baca Provinsi Jawa Tengah</h5>
+          <p class="card-text">Dinas Kearsipan dan Perpustakaan Daerah (Disarpus) Provinsi Jawa Tengah kembali mengadakan serangkaian lomba kreatif yang bertujuan untuk meningkatkan minat baca, memajukan literasi, dan menggali potensi masyarakat dalam bidang perpustakaan.</p>
+          <p><strong>Waktu:</strong> Februari hingga 08 April 2025</p>
+          <a href="https://dinarpus.banyumaskab.go.id/read/50882/lomba-bidang-perpustakaan-tahun-2025" class="btn btn-primary">Lihat Selengkapnya</a>
         </div>
       </div>
     </div>
-  </section>
+    <div class="col">
+      <div class="card h-100 shadow">
+        <img src="event 2.jpg" class="card-img-top" alt="Workshop Perpustakaan Digital">
+        <div class="card-body">
+          <h5 class="card-title">Digital Creative Competition</h5>
+          <p class="card-text">Dalam rangka memperingati World Book Day 2025 dan memeriahkan rangkaian acara Karya Kreatif Banten X Digiwara Festival 2025, Perpustakaan Bank Indonesia Banten mengadakan berbagai lomba.</p>
+          <p><strong>Waktu:</strong> Mei 2025</p>
+          <a href="https://www.instagram.com/p/DJO8GwJSqU1/?utm_source=ig_web_copy_link" class="btn btn-primary">Lihat Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer class="text-center py-3 bg-secondary text-white">
-    <small>&copy; 2025 Perpustakaan Try Alfi Syahri</small>
-  </footer>
+<footer class="text-center">
+  <div class="container">
+    <p>&copy; 2025 Perpustakaan Try Alfi Syahri</p>
+    <p>
+     <a href="https://www.facebook.com/share/1DpQ8pM1yV/" target="_blank" class="text-white me-2">
+      <i class="fab fa-facebook me-2"></i>
+     </a>
+     <a href="https://www.tiktok.com/@sunk.oala?_t=ZS-8wBU1pNNHLM&_r=1" target="_blank" class="text-white me-2">
+      <i class="fab fa-tiktok me-2"></i>
+     </a>
+     <a href="https://www.instagram.com/shyraltry?igsh=amU2NnM2bWNtdWY5" target="_blank" class="text-white">
+      <i class="fab fa-instagram"></i>
+     </a>
+    </p>
+  </div>
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const hero = document.querySelector('.hero');
+  const images = [
+    'https://i.pinimg.com/736x/47/07/23/4707232ef2b2e362b7aece12bcd199e0.jpg',
+    'https://i.pinimg.com/736x/05/02/3f/05023fc97d53febdd49942ce16e7a6ca.jpg',
+    'https://i.pinimg.com/736x/11/7f/1c/117f1ce83f43b54c704c1cdfb30934d9.jpg'
+  ];
+  let current = 0;
+
+  function changeBackground() {
+    hero.style.backgroundImage = url('${images[current]}');
+    current = (current + 1) % images.length;
+  }
+
+  changeBackground();
+
+  setInterval(changeBackground, 5000);
+</script>
+
 </body>
 </html>
