@@ -100,10 +100,9 @@
 </section>
 
 
-<div class="container">
-
-  <div class="section" id="tentang">
-    <h4><b>📖 Tentang Website</b></h4>
+<div class="container" id="tentang">
+  <div class="section" ></div>
+  <h4><b>📖 Tentang Website</b></h4>
     <p> Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan. Di sini, kamu akan menemukan berbagai proyek menarik yang berhubungan dengan pengembangan sistem perpustakaan berbasis web. 
       Website ini juga berfungsi sebagai portofolio pembelajaran, dimana setiap tugas yang diselesaikan akan tersimpan dan dapat diakses kembali untuk referensi atau pengembangan lebih lanjut. 
       Dengan adanya dokumentasi ini, diharapkan bisa membantu mahasiswa memahami bagaimana sebuah sistem perpustakaan online dikembangkan.</p>
@@ -263,14 +262,14 @@
 <script>
   // Fitur pencarian
   const searchInput = document.getElementById('searchInput');
-  const bookList = document.getElementById('bookList');
   searchInput.addEventListener('keyup', function () {
     const keyword = this.value.toLowerCase();
-    const items = bookList.getElementsByTagName('li');
-    for (let item of items) {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(keyword) ? '' : 'none';
-    }
+    const cards = document.querySelectorAll('#koleksi .card');
+
+    cards.forEach(card => {
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      card.style.display = title.includes(keyword) ? 'block' : 'none';
+    });
   });
 </script>
 </body>
