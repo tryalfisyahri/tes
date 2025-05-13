@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak - Perpustakaan Try Alfi Syahri</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(270deg, #e7e8e3, #d9dcd6, #6e8682,#455a4f);
+        background-size: 400% 400%;
+        animation: gradientFlash 6s ease infinite;
+        color: #244747;
+    }
+        @keyframes gradientFlash {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+    }
+    .navbar {
+      background: linear-gradient(to right, #6e866e, #455a4f);
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    table input, table select, table textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+    }
+    th {
+      background-color: #f0f9f3;
+      text-align: left;
+      width: 25%;
+      padding: 10px;
+    }
+    td {
+      padding: 10px;
+    }
+    button {
+      background-color: #6e866e;
+      color: #d9dcd6;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 10%;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #455a4f;
+      color: #e7e8e3
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📚 Perpustakaan Try Alfi Syahri</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tentang.html">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="kontak.html">Kontak</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Lainnya
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="tabel.php">Tabel Perkalian (PHP)</a></li>
+              <li><a class="dropdown-item" href="form_pengunjung.php">Form Pengunjung (PHP)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section Kontak -->
+  <section class="section">
+    <div class="container">
+      <h4><b>📬 Formulir Kritik dan Saran</b></h4>
+      <p>Kami sangat menghargai pendapat Anda! Formulir ini disediakan untuk menerima kritik dan saran guna meningkatkan kualitas layanan kami.</p>
+
+      <p><strong>Mengapa Mengisi Formulir Ini?</strong></p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li>✅ Membantu kami meningkatkan layanan dan pengalaman pengguna</li>
+        <li>✅ Memberikan masukan langsung kepada tim pengelola</li>
+        <li>✅ Menyampaikan keluhan atau ide pengembangan dengan mudah</li>
+      </ul>
+
+      <p class="mt-3">Masukan Anda sangat berarti bagi kami! Terima kasih telah membantu kami menjadi lebih baik.</p>
+
+      <form action="https://formspree.io/f/xnnpnovd" method="post" class="mt-4">
+        <div class="table-responsive">
+          <table class="table table-bordered align-middle">
+            <tr>
+              <th>Nama</th>
+              <td><input type="text" name="nama" required placeholder="Masukkan Nama Anda" /></td>
+            </tr>
+            <tr>
+              <th>E-mail</th>
+              <td><input type="email" name="e-mail" required placeholder="Masukkan E-mail Anda" /></td>
+            </tr>
+            <tr>
+              <th>Jenis Pengaduan</th>
+              <td>
+                <select name="jenis_pengaduan" required>
+                  <option value="">Pilih Jenis</option>
+                  <option value="kritik">Kritik</option>
+                  <option value="saran">Saran</option>
+                  <option value="lainnya">Lainnya</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>Pesan</th>
+              <td><textarea name="pesan" rows="5" required placeholder="Tulis Pesan Anda"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center">
+                <button type="submit">Kirim</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3" style="background: #455a4f; color: white;">
+    &copy; 2025 Perpustakaan Try Alfi Syahri. 
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
