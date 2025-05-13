@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Perpustakaan Try Alfi Syahri</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #e9f0ec;
@@ -12,8 +12,18 @@
     .navbar {
       background-color: #2d4c46;
     }
-    .navbar-brand, .nav-link, .dropdown-item {
+    .navbar-brand, .nav-link {
       color: #ffffff !important;
+    }
+    .dropdown-menu {
+      background-color: #6e866e;
+    }
+    .dropdown-item {
+      color: #000000 !important;
+    }
+    .dropdown-item:hover {
+      background-color: #e9f0ec;
+      color: #2d4c46 !important;
     }
     .hero {
       background-color: #ffffff;
@@ -36,22 +46,22 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="#">Perpustakaan Try Alfi Syahri</a>
+    <a class="navbar-brand" href="#">Perpustakaan</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon bg-light"></span>
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
         <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
         <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="lainnyaDropdown" role="button" data-bs-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
             Lainnya
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="perkalian.php">Tabel Perkalian</a></li>
-            <li><a class="dropdown-item" href="form_pengunjung.php">Form Pengunjung</a></li>
+            <li><a class="dropdown-item" href="perkalian.php">Tabel Perkalian (PHP)</a></li>
+            <li><a class="dropdown-item" href="form_pengunjung.php">Form Pengunjung (PHP)</a></li>
           </ul>
         </li>
       </ul>
@@ -59,63 +69,71 @@
   </div>
 </nav>
 
-<!-- Konten Beranda -->
+<!-- Hero Section -->
 <div class="container">
-  <div class="hero" id="beranda">
-    <h1>Selamat Datang di Website Perpustakaan!</h1>
-    <p>Website ini menyimpan berbagai tugas dan koleksi digital dari mata kuliah Pengembangan Web. Temukan berbagai fitur seperti pencarian buku, kolaborasi, tabel interaktif, dan formulir pengunjung.</p>
+  <div class="hero">
+    <h2 class="mb-4">Selamat Datang di Website Perpustakaan!</h2>
+    <p>Halo! Selamat datang di Perpustakaan Try Alfi Syahri. Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan.</p>
+    <p>Website ini juga berfungsi sebagai portofolio pembelajaran, di mana setiap tugas yang diselesaikan akan tersimpan dan dapat diakses kembali untuk referensi atau pengembangan lebih lanjut. Dengan adanya dokumentasi ini, diharapkan bisa membantu mahasiswa memahami bagaimana sebuah sistem perpustakaan online dikembangkan.</p>
+    <p>Selain itu, website ini bisa menjadi sumber inspirasi bagi siapa saja yang tertarik dengan dunia web development, terutama yang berfokus pada sistem informasi perpustakaan. Nantinya, website ini dapat terus dikembangkan dengan fitur-fitur tambahan agar lebih interaktif dan bermanfaat bagi pengguna. Terima kasih sudah berkunjung, semoga website ini bermanfaat! 📚</p>
+  </div>
+
+  <!-- Tentang Section -->
+  <div class="hero" id="tentang">
+    <h4>Tentang Kolaborasi</h4>
+    <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital.</p>
   </div>
 
   <!-- Koleksi Buku -->
-  <div class="hero mt-4">
-    <h2>Koleksi Buku Digital</h2>
-    <form action="" method="GET" class="mb-3">
-      <div class="input-group">
-        <input type="text" name="search" class="form-control" placeholder="Cari judul buku...">
-        <button type="submit" class="btn btn-success">Cari</button>
+  <div class="hero" id="koleksi">
+    <h4>Koleksi Buku Digital</h4>
+    <form method="get">
+      <div class="input-group mb-3">
+        <input type="text" name="search" class="form-control" placeholder="Cari judul buku..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+        <button class="btn btn-success" type="submit">Cari</button>
       </div>
     </form>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Judul</th>
+          <th>Penulis</th>
+          <th>Tahun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $buku = [
+          ["judul" => "Pemrograman Web Dasar", "penulis" => "Try Alfi", "tahun" => "2023"],
+          ["judul" => "Sistem Informasi Perpustakaan", "penulis" => "Alfi Syahri", "tahun" => "2022"],
+          ["judul" => "Kecerdasan Buatan", "penulis" => "Dosen Informatika", "tahun" => "2021"],
+          ["judul" => "Pengantar Basis Data", "penulis" => "Dosen Perpus", "tahun" => "2020"]
+        ];
 
-    <?php
-    // Contoh array buku
-    $buku = [
-      ["judul" => "Pengantar Sistem Informasi", "pengarang" => "Budi Santosa"],
-      ["judul" => "Pemrograman Web Lanjut", "pengarang" => "Alfi Syahri"],
-      ["judul" => "Manajemen Perpustakaan", "pengarang" => "Dian Puspita"]
-    ];
+        $search = isset($_GET['search']) ? strtolower($_GET['search']) : '';
 
-    $search = isset($_GET['search']) ? strtolower($_GET['search']) : '';
-
-    echo "<ul class='list-group'>";
-    foreach ($buku as $item) {
-      if ($search == '' || strpos(strtolower($item['judul']), $search) !== false) {
-        echo "<li class='list-group-item'>";
-        echo "<strong>{$item['judul']}</strong> - {$item['pengarang']}";
-        echo "</li>";
-      }
-    }
-    echo "</ul>";
-    ?>
+        foreach ($buku as $b) {
+          if ($search === '' || strpos(strtolower($b["judul"]), $search) !== false) {
+            echo "<tr><td>{$b['judul']}</td><td>{$b['penulis']}</td><td>{$b['tahun']}</td></tr>";
+          }
+        }
+        ?>
+      </tbody>
+    </table>
   </div>
 
-  <!-- Tentang -->
-  <div class="hero mt-4" id="tentang">
-    <h2>Tentang Kami</h2>
-    <p>Perpustakaan ini adalah hasil kolaborasi mahasiswa dalam mempelajari sistem perpustakaan berbasis digital. Dibuat untuk mengarsipkan tugas dan menjadi referensi pengembangan sistem informasi.</p>
-  </div>
-
-  <!-- Kontak -->
-  <div class="hero mt-4" id="kontak">
-    <h2>Kontak</h2>
-    <p>Hubungi kami di: <a href="mailto:tryalfisyahri@example.com">tryalfisyahri@example.com</a></p>
+  <!-- Kontak Section -->
+  <div class="hero" id="kontak">
+    <h4>Kontak Kami</h4>
+    <p>Email: tryalfi@perpus.com</p>
+    <p>Instagram: <a href="https://instagram.com/tryalfisyahri" target="_blank">@tryalfisyahri</a></p>
   </div>
 </div>
 
-<!-- Footer -->
 <footer>
-  <p>&copy; 2025 Perpustakaan Try Alfi Syahri</p>
+  <p>&copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
