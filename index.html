@@ -3,52 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perpustakaan Try Alfi Syahri</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Homepage | Perpustakaan Try Alfi Syahri</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #e9f0ec;
+      background: linear-gradient(270deg, #e7e8e3, #d9dcd6, #6e8682, #455a4f);
+      background-size: 400% 400%;
+      animation: gradientFlash 6s ease infinite;
+      color: #455a4f;
     }
+
+    @keyframes gradientFlash {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .navbar {
-      background-color: #2d4c46;
+      background-color: #455a4f;
     }
-    .navbar-brand, .nav-link {
-      color: #ffffff !important;
+
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: #d9dcd6 !important;
     }
+
     .dropdown-menu {
-      background-color: #6e866e;
+      background-color: #455a4f;
     }
-    .dropdown-item {
-      color: #000000 !important;
+
+    .dropdown-menu .dropdown-item {
+      color: #6e8682;
     }
-    .dropdown-item:hover {
-      background-color: #e9f0ec;
-      color: #2d4c46 !important;
-    }
+
     .hero {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 15px;
-      margin-top: 30px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 60px 0;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
     }
+
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
     footer {
-      background-color: #2d4c46;
-      color: white;
       text-align: center;
       padding: 10px;
-      margin-top: 40px;
+      background-color: #455a4f;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="#">Perpustakaan</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    <a class="navbar-brand fw-bold" href="#">📚 Perpustakaan Try Alfi Syahri</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
@@ -56,11 +72,9 @@
         <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
         <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-            Lainnya
-          </a>
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Lainnya</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="perkalian.php">Tabel Perkalian (PHP)</a></li>
+            <li><a class="dropdown-item" href="mathmatriks.php">Tabel Perkalian (PHP)</a></li>
             <li><a class="dropdown-item" href="form_pengunjung.php">Form Pengunjung (PHP)</a></li>
           </ul>
         </li>
@@ -69,71 +83,65 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Selamat Datang di Perpustakaan Try Alfi Syahri</h1>
+    <p class="lead">Temukan koleksi buku, event, dan kolaborasi menarik dalam pengembangan sistem informasi perpustakaan digital.</p>
+  </div>
+</section>
+
 <div class="container">
-  <div class="hero">
-    <h2 class="mb-4">Selamat Datang di Website Perpustakaan!</h2>
-    <p>Halo! Selamat datang di Perpustakaan Try Alfi Syahri. Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan.</p>
-    <p>Website ini juga berfungsi sebagai portofolio pembelajaran, di mana setiap tugas yang diselesaikan akan tersimpan dan dapat diakses kembali untuk referensi atau pengembangan lebih lanjut. Dengan adanya dokumentasi ini, diharapkan bisa membantu mahasiswa memahami bagaimana sebuah sistem perpustakaan online dikembangkan.</p>
-    <p>Selain itu, website ini bisa menjadi sumber inspirasi bagi siapa saja yang tertarik dengan dunia web development, terutama yang berfokus pada sistem informasi perpustakaan. Nantinya, website ini dapat terus dikembangkan dengan fitur-fitur tambahan agar lebih interaktif dan bermanfaat bagi pengguna. Terima kasih sudah berkunjung, semoga website ini bermanfaat! 📚</p>
+
+  <div class="section" id="tentang">
+    <h2>📖 Tentang Website</h2>
+    <p>Website ini dirancang sebagai sarana pembelajaran dan referensi dalam pengembangan sistem informasi perpustakaan digital berbasis web. Koleksi tugas, dokumentasi, dan fitur-fitur yang tersedia bertujuan mendukung mahasiswa dalam belajar membangun sistem perpustakaan online.</p>
   </div>
 
-  <!-- Tentang Section -->
-  <div class="hero" id="tentang">
-    <h4>Tentang Kolaborasi</h4>
-    <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital.</p>
+  <div class="section">
+    <h2>🤝 Kolaborasi</h2>
+    <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://perpustakaan.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk memperkenalkan teknologi perpustakaan digital.</p>
   </div>
 
-  <!-- Koleksi Buku -->
-  <div class="hero" id="koleksi">
-    <h4>Koleksi Buku Digital</h4>
-    <form method="get">
-      <div class="input-group mb-3">
-        <input type="text" name="search" class="form-control" placeholder="Cari judul buku..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-        <button class="btn btn-success" type="submit">Cari</button>
-      </div>
-    </form>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Judul</th>
-          <th>Penulis</th>
-          <th>Tahun</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        $buku = [
-          ["judul" => "Pemrograman Web Dasar", "penulis" => "Try Alfi", "tahun" => "2023"],
-          ["judul" => "Sistem Informasi Perpustakaan", "penulis" => "Alfi Syahri", "tahun" => "2022"],
-          ["judul" => "Kecerdasan Buatan", "penulis" => "Dosen Informatika", "tahun" => "2021"],
-          ["judul" => "Pengantar Basis Data", "penulis" => "Dosen Perpus", "tahun" => "2020"]
-        ];
-
-        $search = isset($_GET['search']) ? strtolower($_GET['search']) : '';
-
-        foreach ($buku as $b) {
-          if ($search === '' || strpos(strtolower($b["judul"]), $search) !== false) {
-            echo "<tr><td>{$b['judul']}</td><td>{$b['penulis']}</td><td>{$b['tahun']}</td></tr>";
-          }
-        }
-        ?>
-      </tbody>
-    </table>
+  <div class="section">
+    <h2>🔍 Pencarian Buku</h2>
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Cari judul buku...">
+    <ul id="bookList" class="list-group">
+      <li class="list-group-item"><a href="https://drive.google.com/file/d/1abc123/view" target="_blank">Belajar HTML Dasar</a></li>
+      <li class="list-group-item"><a href="https://drive.google.com/file/d/1def456/view" target="_blank">Pengantar Web Programming</a></li>
+      <li class="list-group-item"><a href="https://drive.google.com/file/d/1ghi789/view" target="_blank">Desain UI/UX untuk Pemula</a></li>
+    </ul>
   </div>
 
-  <!-- Kontak Section -->
-  <div class="hero" id="kontak">
-    <h4>Kontak Kami</h4>
-    <p>Email: tryalfi@perpus.com</p>
-    <p>Instagram: <a href="https://instagram.com/tryalfisyahri" target="_blank">@tryalfisyahri</a></p>
+  <div class="section">
+    <h2>📅 Event Perpustakaan</h2>
+    <p>Ikuti berbagai acara menarik kami seputar literasi digital dan pengembangan perpustakaan.</p>
+    <a href="https://www.instagram.com/eventperpustakaan" class="btn btn-outline-primary" target="_blank">Kunjungi Instagram Event</a>
   </div>
+
+  <div class="section" id="kontak">
+    <h2>📬 Kontak</h2>
+    <p>Hubungi kami melalui email: <a href="mailto:info@perpustakaan.com">info@perpustakaan.com</a></p>
+  </div>
+
 </div>
 
 <footer>
-  <p>&copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.</p>
+  <p>&copy; 2025 Perpustakaan Try Alfi Syahri</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Fitur pencarian
+  const searchInput = document.getElementById('searchInput');
+  const bookList = document.getElementById('bookList');
+  searchInput.addEventListener('keyup', function () {
+    const keyword = this.value.toLowerCase();
+    const items = bookList.getElementsByTagName('li');
+    for (let item of items) {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(keyword) ? '' : 'none';
+    }
+  });
+</script>
 </body>
 </html>
