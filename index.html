@@ -29,6 +29,18 @@
     border-bottom: 3px solid #6e866e;
     position: relative;
     }
+    .section-card {
+    background-color: #f5f9f4;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 3px solid #455a4f;
+    }
+    .section-wrapper {
+    background-color: #455a4f;
+    padding: 50px 15px;
+    }
     .navbar-custom {
     background-color: #455a4f;
     border-bottom: 2px solid #6e866e;
@@ -75,17 +87,6 @@
     @keyframes time {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
-    }
-    .hero .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%
-    }
-    .hero-content {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
     }
     .book-collection {
     display: flex;
@@ -152,10 +153,10 @@
         <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="lainnyaDropdown" role="button" data-bs-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="collectionDropdown" role="button" data-bs-toggle="dropdown">
             Lainnya
           </a>
-          <ul class="dropdown-menu" aria-labelledby="lainnyaDropdown">
+          <ul class="dropdown-menu" aria-labelledby="collectionDropdown">
             <li><a class="dropdown-item" href="tugas.html">Tabel Matriks</a></li>
             <li><a class="dropdown-item" href="buku.html">Form Pengunjung</a></li>
       </ul>
@@ -163,21 +164,30 @@
   </div>
 </nav>
 
-<div class="hero">
-  <div class="hero-content">
-    <h1>Selamat Datang di Perpustakaan Try Alfi Syahri</h1>
+<section class="section-wrapper">
+<div class="container">
+  <div class="section-card">
+    <h1 class="fw-bold">Selamat Datang di Perpustakaan Try Alfi Syahri</h1>
     <p class="mb-4">Temukan berbagai proyek menarik yang berhubungan dengan pengembangan sistem perpustakaan berbasis web. 
       Website ini juga berfungsi sebagai portofolio pembelajaran, dimana setiap tugas yang diselesaikan akan tersimpan dan dapat diakses kembali untuk referensi atau pengembangan lebih lanjut.
       Dengan adanya dokumentasi ini, diharapkan bisa membantu mahasiswa memahami bagaimana sebuah sistem perpustakaan online dikembangkan.</p>
   </div>
 </div>
-
-<section class="hero">
-  <h3>Collaboration</h3>
-  <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital.</p>
 </section>
 
-<div class="hero">
+<section class="section-wrapper">
+  <div class="container">
+  <div class="section-card">
+  <h3 class="fw-bold">Collaboration</h3>
+  <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital.</p>
+</div>
+</div>
+</section>
+
+<section class="section-wrapper">
+  <div class="container">
+  <div class="section-card">
+  <h3 class="fw-bold">Koleksi</h3>
   <form class="d-flex justify-content-center search-bar">
     <input type="text" class="form-control w-50" placeholder="Cari koleksi, jurnal, atau e-resource...">
     <button class="btn btn-light ms-1"><i class="fas fa-search"></i></button>
