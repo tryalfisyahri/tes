@@ -83,12 +83,21 @@
   </div>
 </nav>
 
-<section class="hero">
+<!-- Hero Section -->
+<section id="beranda" style="
+  background: 
+    linear-gradient(rgba(44, 100, 83, 0.8), rgba(33, 73, 61, 0.8)),
+    url('https://images.unsplash.com/photo-1535905748047-14b9f32c5bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+">
   <div class="container">
-    <h1 class="display-5 fw-bold">Selamat Datang di Perpustakaan Try Alfi Syahri</h1>
+    <h1 class="display-4 fw-bold">Selamat Datang di Perpustakaan Try Alfi Syahri</h1>
     <p class="lead">Temukan koleksi buku, event, dan kolaborasi menarik dalam pengembangan sistem informasi perpustakaan digital.</p>
   </div>
 </section>
+
 
 <div class="container">
 
@@ -105,25 +114,98 @@
   <div class="section">
     <h2>🔍 Pencarian Buku</h2>
     <input type="text" id="searchInput" class="form-control mb-3" placeholder="Cari judul buku...">
-    <ul id="bookList" class="list-group">
-      <li class="list-group-item"><a href="https://drive.google.com/file/d/1abc123/view" target="_blank">Belajar HTML Dasar</a></li>
-      <li class="list-group-item"><a href="https://drive.google.com/file/d/1def456/view" target="_blank">Pengantar Web Programming</a></li>
-      <li class="list-group-item"><a href="https://drive.google.com/file/d/1ghi789/view" target="_blank">Desain UI/UX untuk Pemula</a></li>
-    </ul>
+    <div class="section" id="koleksi">
+      <h2>Koleksi Buku yang Bisa Dibaca Sekarang</h2>
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-2">
+            <img src="https://i.pinimg.com/736x/8c/50/9a/8c509a91adca718140857ef57730f1d9.jpg" class="img-fluid rounded-start" alt="Atomic Habits">
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">Atomic Habits</h5>
+              <p class="card-text"><small class="text-muted">James Clear</small></p>
+              <p class="card-text">Buku ini menjelaskan cara membentuk kebiasaan kecil yang konsisten agar membentuk hidup yang lebih produktif dan positif.</p>
+              <a href="https://drive.google.com/file/d/1U6uQfMpELtCyMYS8gz0qQzS9SgwI8JrJ/view?usp=drivesdk" class="btn btn-success" target="_blank">Baca Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-2">
+            <img src="https://i.pinimg.com/736x/6b/3a/01/6b3a010fb037d130bd5e13df3c1ba18b.jpg" class="img-fluid rounded-start" alt="Filosofi Teras">
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">Filosofi Teras</h5>
+              <p class="card-text"><small class="text-muted">Henry Manampiring</small></p>
+              <p class="card-text">Memperkenalkan filsafat Stoisisme untuk membantu hidup lebih tenang dan rasional dalam menghadapi masalah sehari-hari.</p>
+              <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="btn btn-success" target="_blank">Baca Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-2">
+            <img src="https://i.pinimg.com/1200x/fe/ea/b7/feeab7b37152f25ecf2d8b0effb69f28.jpg" class="img-fluid rounded-start" alt="Sejarah Dunia yang Disembunyikan">
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">Sejarah Dunia yang Disembunyikan</h5>
+              <p class="card-text"><small class="text-muted">Jonathan Black</small></p>
+              <p class="card-text">Membahas sejarah alternatif dan teori konspirasi dari pengaruh organisasi rahasia dalam dunia politik, sains, dan budaya.</p>
+              <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="btn btn-success" target="_blank">Baca Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
   </div>
 
-  <div class="section">
-    <h2>📅 Event Perpustakaan</h2>
-    <p>Ikuti berbagai acara menarik kami seputar literasi digital dan pengembangan perpustakaan.</p>
-    <a href="https://www.instagram.com/eventperpustakaan" class="btn btn-outline-primary" target="_blank">Kunjungi Instagram Event</a>
-  </div>
-
-  <div class="section" id="kontak">
-    <h2>📬 Kontak</h2>
-    <p>Hubungi kami melalui email: <a href="mailto:info@perpustakaan.com">info@perpustakaan.com</a></p>
-  </div>
-
-</div>
+  <section id="event" style="background-color: #455a4f; color: white; padding: 40px;">
+    <div class="container">
+      <h2 class="mb-4" style="color: rgb(44, 100, 83);">Event Terbaru</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        
+        <!-- Event 1 -->
+        <div class="col">
+          <div class="card h-100 border-light d-flex flex-row" style="background-color: #455a4f; color: white;">
+            <img src="https://your-image-link.com/wisata-literasi.jpg" class="img-fluid rounded-start" style="max-width: 180px;" alt="Wisata Literasi">
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(44, 100, 83);">Wisata Literasi</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum illum repellendus, obcaecati impedit.
+              </p>
+              <p class="card-text"><small class="text-light">21 Februari 2025</small></p>
+              <a href="https://www.instagram.com/p/xyz123abc/" class="btn btn-outline-warning" target="_blank">Lihat Event</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Event 2 -->
+        <div class="col">
+          <div class="card h-100 border-warning d-flex flex-row" style="background-color: #455a4f; color: white;">
+            <img src="https://your-image-link.com/library-week.jpg" class="img-fluid rounded-start" style="max-width: 180px;" alt="Library Week Festival">
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(44, 100, 83);">Library Week Festival 2022</h5>
+              <p class="card-text">
+                Accusantium nobis asperiores perferendis, architecto facere explicabo dolorum odit consequuntur esse.
+              </p>
+              <p class="card-text"><small class="text-light">18 Oktober 2022</small></p>
+              <a href="https://www.instagram.com/p/abc456def/" class="btn btn-outline-warning" target="_blank">Lihat Event</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
 
 <footer>
   <p>&copy; 2025 Perpustakaan Try Alfi Syahri</p>
