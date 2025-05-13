@@ -1,112 +1,341 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang - Perpustakaan Try Alfi Syahri</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Perpustakaan Try Alfi Syahri</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Link ke Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Link ke file CSS custom jika ada -->
+    <link rel="stylesheet" href="style.css">
+    <style>
     body {
-      background: linear-gradient(270deg, #e7e8e3, #d9dcd6, #6e8682, #455a4f);
-      background-size: 400% 400%;
-      animation: gradientFlash 6s ease infinite;
-      color: #455a4f;
-    }
-    @keyframes gradientFlash {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .navbar {
-      background: linear-gradient(to right, #6e8682, #455a4f);
-    }
-    .navbar-brand, .nav-link {
-      color: white !important;
-    }
-    .section {
-      padding: 60px 20px;
-    }
-    table th {
-      background-color: #e9f9ee;
-    }
-  </style>
+    font-family: Segoe UI, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #e7e8e3, #d9dcd6, #6e8682, #455a4f);
+    background-size: 400% 400%;
+    animation: gradientFlash 6s ease infinite;
+    color: #455a4f;
+}
+@keyframes gradientFlash {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+        header {
+            background-color: #455a4f;
+            color: #e7e8e3;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #6e866e;
+            position: relative;
+        }
+        .icon-container {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+        .icon-container img {
+            width: 60px;
+            height: 60px;
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+           0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #e7e8e3;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(31, 89, 30, 0.1);
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #455a4f;
+            color: #e7e8e3;
+            position: relative;    
+        }
+        .last-edited {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .last-edited img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes time {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .book-collection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .book {
+            display: flex;
+            align-items: center;
+            background: #d9dcd6;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .book img {
+            width: 120px;
+            height: 170px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .book-info {
+            flex: 1;
+        }
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .book-author {
+            font-size: 14px;
+            color: #666;
+        }
+        .book-desc {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+        }
+        .read-button {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #6e866e;
+            color: #e7e8e3;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .read-button:hover {
+            background: #455a4f;
+	}
+</style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">📚 Perpustakaan Try Alfi Syahri</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="tentang.html">Tentang</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="kontak.html">Kontak</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Lainnya
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="tabel.php">Tabel Perkalian (PHP)</a></li>
-              <li><a class="dropdown-item" href="form_pengunjung.php">Form Pengunjung (PHP)</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Section Tentang -->
-  <section class="section">
-    <div class="container">
-      <h4><b>Tentang Saya</b></h4>
-      <p>Halaman ini berisi informasi biodata saya sebagai pemilik dan pengelola Perpustakaan Try Alfi Syahri</p>
-
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped align-middle">
-          <tbody>
-            <tr>
-              <th scope="row" style="width: 200px;">Nama</th>
-              <td>Try Alfi Syahri</td>
-            </tr>
-            <tr>
-              <th scope="row">NIM</th>
-              <td>220709040</td>
-            </tr>
-            <tr>
-              <th scope="row">Email</th>
-              <td>tryalfi@students.usu.ac.id</td>
-            </tr>
-            <tr>
-              <th scope="row">Angkatan</th>
-              <td>2022</td>
-            </tr>
-            <tr>
-              <th scope="row">Fakultas</th>
-              <td>Ilmu Budaya</td> 
+    <script>
+        window.onload = function() {
+            Swal.fire({
+                title: "Halooo!",
+                text: "Selamat datang di Perpustakaan Try Alfi Syahri. Temukan berbagai buku digital menarik di sini!",
+                icon: "success",
+                confirmButtonText: "Mulai Menjelajah"
+            });
+        };
+    </script>    
+    <div style="position: fixed; bottom: 0px;left: 10px;width:130px;height:160px;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitw15AaPnjyjXT9H3pcOPPzsD7h2EVW6PUzJeXY3mcPn5q4ZnjCCyNzpL0OKqj2bSo51TU7qYg_tzxm44lUaSMko5NB2P-X8rdd8tXc9aPLQPDWIWxfQqYU-fQHCtgpRpqOCX5X32toocg/s1600/halo.gif" /></div>
+    <header>
+        <nav class="navbar navbar-expand-lg" style="background-color: #455a4f;">
+        <div class="container-fluid">
+              <a class="navbar-brand fw-bold" href="#">📚 Perpustakaan Try Alfi Syahri</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                  <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+                  <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                      Lainnya
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="tabel.php">Tabel Perkalian (PHP)</a></li>
+                      <li><a class="dropdown-item" href="form_pengunjung.php">Form Pengunjung (PHP)</a></li>
                 </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+              </div>
+            </div>
+          </nav>          
+    </header>
 
-  <!-- Footer -->
-  <footer class="text-center py-3" style="background: #455a4f; color: white;">
-    &copy; 2025 Perpustakaan Try Alfi Syahri. All rights reserved.
-  </footer>
+    <section id="home">
+        <h4><b>Selamat Datang di Website Perpustakaan!</b></h4>
+        <p> 
+            Halo! Selamat datang di Perpustakaan Try Alfi Syahri. Website ini dibuat sebagai wadah untuk menyimpan, menampilkan, dan berbagi repository tugas-tugas dari Mata Kuliah Pengembangan Web Perpustakaan. 
+            
+            Di sini, kamu akan menemukan berbagai proyek menarik yang berhubungan dengan pengembangan sistem perpustakaan berbasis web. 
+            Website ini juga berfungsi sebagai portofolio pembelajaran, dimana setiap tugas yang diselesaikan akan tersimpan dan dapat diakses kembali untuk referensi atau pengembangan lebih lanjut.
+            Dengan adanya dokumentasi ini, diharapkan bisa membantu mahasiswa memahami bagaimana sebuah sistem perpustakaan online dikembangkan.</p>
+        <p> 
+            Selain itu, website ini bisa menjadi sumber inspirasi bagi siapa saja yang tertarik dengan dunia web development, terutama yang berfokus pada sistem informasi perpustakaan. 
+            Nantinya, website ini dapat terus dikembangkan dengan fitur-fitur tambahan agar lebih interaktif dan bermanfaat bagi pengguna.
+            Terima Kasih sudah berkunjung, semoga website ini bermanfaat! 📚</p></section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <section id="home">
+        <h4><b>Collaboration</b></h4>
+        <p>Perpustakaan Try Alfi Syahri bekerja sama dengan <a href="https://library.usu.ac.id/" target="_blank">Perpustakaan Universitas Sumatera Utara</a> untuk berbagi ilmu dan memperkenalkan teknologi perpustakaan digital.</p>
+    </section>
+
+    <section id="collection">
+        <h4><center><b>Koleksi Buku Digital</b></center></h4>
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Cari judul buku...">
+        <div class="section" id="koleksi">        
+            <!-- Buku 1 -->
+            <div class="book">
+                <img src="https://i.pinimg.com/736x/8c/50/9a/8c509a91adca718140857ef57730f1d9.jpg" alt="Cover Buku 1">
+                <div class="book-info">
+                    <div class="book-title">Atomic Habits</div>
+                    <div class="book-author">James Clear</div>
+                    <div class="book-desc">Bagaimana perubahan kecil bisa membawa dampak besar dalam hidup? Dalam Atomic Habits, James Clear mengungkapkan cara membangun kebiasaan baik, menghilangkan kebiasaan buruk, dan menciptakan sistem yang efektif untuk mencapai kesuksesan jangka panjang.
+                        Buku ini menjelaskan bahwa kebiasaan adalah hasil dari proses kecil yang berulang setiap hari. Dengan menerapkan The Four Laws of Behavior Change membuat kebiasaan lebih jelas, menarik, mudah, dan memuaskan.
+                        kita dapat membentuk pola hidup yang lebih produktif dan positif. 
+                        Clear juga menekankan pentingnya perubahan identitas dalam membangun kebiasaan, yaitu dengan berfokus pada siapa kita ingin menjadi, bukan hanya pada hasil yang ingin dicapai. 
+                        Dengan pendekatan berbasis ilmu psikologi dan neuroscience, serta contoh nyata dari atlet, pengusaha, dan orang sukses lainnya, Atomic Habits memberikan panduan praktis bagi siapa saja yang ingin meningkatkan kualitas hidup melalui kebiasaan kecil yang konsisten.</div>
+                    <a href="https://drive.google.com/file/d/1U6uQfMpELtCyMYS8gz0qQzS9SgwI8JrJ/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+            </div>
+        
+            <!-- Buku 2 -->
+            <div class="book">
+                <img src="https://i.pinimg.com/736x/6b/3a/01/6b3a010fb037d130bd5e13df3c1ba18b.jpg" alt="Cover Buku 2">
+                <div class="book-info">
+                    <div class="book-title">Filosofi Teras</div>
+                    <div class="book-author">Henry Manampiring</div>
+                    <div class="book-desc">Dalam Filosofi Teras, Henry Manampiring memperkenalkan filsafat Stoisisme, ajaran bijak dari zaman Yunani-Romawi yang masih relevan untuk kehidupan saat ini.
+                        Stoisisme mengajarkan kita untuk fokus pada hal-hal yang bisa kita kendalikan dan menerima dengan tenang apa yang berada di luar kendali kita. Dengan prinsip-prinsip seperti dikotomi kendali, latihan mental, dan perspektif terhadap kebahagiaan, buku ini membantu pembaca menghadapi tantangan hidup dengan lebih rasional dan tenang.
+                        Ditulis dengan gaya ringan dan disertai contoh kehidupan sehari-hari, Filosofi Teras cocok bagi siapa saja yang ingin menjalani hidup dengan lebih damai, bebas dari kecemasan berlebihan, dan lebih fokus pada hal-hal yang benar-benar penting.</div>
+                    <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+            </div>
+
+            <!-- Buku 3 -->
+            <div class="book">
+                <img src="https://i.pinimg.com/1200x/fe/ea/b7/feeab7b37152f25ecf2d8b0effb69f28.jpg" alt="Cover Buku 3">
+                <div class="book-info">
+                    <div class="book-title">Sejarah Dunia yang Disembunyikan</div>
+                    <div class="book-author">Jonathan Black</div>
+                    <div class="book-desc">Apa yang sebenarnya terjadi di balik peristiwa-peristiwa besar dalam sejarah dunia? Dalam Sejarah Dunia yang Disembunyikan, Jonathan Black mengajak pembaca melihat sejarah dari perspektif yang berbeda, mengungkap berbagai teori alternatif tentang asal-usul peradaban, peran organisasi rahasia, serta pengaruh mistisisme dan esoterisme dalam perjalanan umat manusia.
+                        Buku ini mengeksplorasi bagaimana kelompok-kelompok seperti Freemason, Illuminati, dan aliran-aliran spiritual tertentu diyakini memiliki pengaruh besar terhadap politik, sains, dan budaya dunia. 
+                        Dengan pendekatan yang memadukan sejarah, filsafat, dan teori konspirasi, Jonathan Black menyajikan narasi yang menggugah rasa ingin tahu dan mendorong pembaca untuk mempertanyakan apa yang selama ini dianggap sebagai kebenaran sejarah.</div>
+                    <a href="https://drive.google.com/file/d/1XfoQ_WLQ87nG8lnFZXVDmQA9pScEFoAs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+            </div>
+        
+            <!-- Buku 4 -->
+            <div class="book">
+                <img src="https://i.pinimg.com/736x/9a/bb/61/9abb61fcf68afd124375a82dfd02ca6a.jpg" alt="Cover Buku 4">
+                <div class="book-info">
+                    <div class="book-title">Laut Bercerita</div>
+                    <div class="book-author">Leila S. Chudori</div>
+                    <div class="book-desc">Di era rezim Orde Baru, di tengah penindasan dan ketakutan, Laut Bercerita mengisahkan perjuangan, persahabatan, dan kehilangan melalui sudut pandang Biru Laut, seorang aktivis mahasiswa yang berjuang melawan ketidakadilan di Indonesia tahun 1990-an. Bersama kawan-kawannya, Laut terlibat dalam gerakan bawah tanah yang memperjuangkan kebebasan berbicara dan hak asasi manusia. 
+                        Namun, idealismenya harus dibayar mahal ketika ia diculik dan mengalami penyiksaan brutal oleh aparat negara.</div>
+                    <a href="https://drive.google.com/file/d/1d337qR1BBp2b8oGhb1C9ft7Fn6madrJs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+            </div>
+
+            <!-- Buku 5 -->
+            <div class="book">
+                <img src="https://i.pinimg.com/736x/e2/1b/43/e21b43796903145c4ed9527f1ebb3f4a.jpg" alt="Cover Buku 5">
+                <div class="book-info">
+                    <div class="book-title">Pulang</div>
+                    <div class="book-author">Leila S. Chudori</div>
+                    <div class="book-desc">Buku Pulang karya Leila S. Chudori mengisahkan tentang para eksil politik Indonesia yang terpaksa hidup di pengasingan akibat peristiwa G30S 1965. Novel ini berpusat pada Dimas Suryo, seorang jurnalis yang harus meninggalkan tanah airnya setelah rezim Orde Baru berkuasa. 
+                        Bersama rekan-rekannya, ia terdampar di Paris dan berusaha membangun kehidupan baru, meski dihantui rasa rindu akan Indonesia yang tak bisa ia kunjungi.
+                        Di sisi lain, cerita juga mengikuti perjalanan Lintang Utara, putri Dimas, yang tumbuh besar di Prancis dan berusaha memahami akar sejarah keluarganya. 
+                        Ketika ia mendapatkan kesempatan untuk kembali ke Indonesia, ia dihadapkan pada kenyataan yang kompleks tentang negara yang ayahnya tinggalkan dan sejarah yang selama ini disembunyikan.</div>
+                    <a href="https://drive.google.com/file/d/1e3xSFjFrsF8VWaFaRRqdTKC1Jn5zpYzs/view?usp=drivesdk" class="read-button" target="Google Drive-Viewer">Baca Sekarang</a></div>
+            </div></section>
+	
+            <section id="event" class="py-5" style="background: linear-gradient(to right, #d9dcd6,);">
+                <div class="container">
+                  <h4 class="mb-4 text-gray fw-bold">Event Terbaru</h4>
+                  <div class="row g-4">
+              
+                    <!-- Event Card 1 -->
+                    <div class="col-md-6">
+                      <div class="card text-mint h-100" style="background-color: #FFF; border: 1px solid #d9dcd6;">
+                        <div class="card-body">
+                          <h5 class="card-title text-success">Workshop</h5>
+                          <div class="mb-3 d-flex justify-content-center">
+                            <div style="max-width:100%; width:100%;">
+                              <blockquote class="instagram-media"
+                                data-instgrm-permalink="https://www.instagram.com/p/DI0hU_mRdOk/?img_index=1&igsh=MW95ZjVlcDFuM3JxZw=="
+                                data-instgrm-version="14"
+                                style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%; max-width:400px;">
+                              </blockquote>
+                            </div>
+                          </div>
+                          <p class="card-text">Workshop yang bertemakan How to Publish Journal Article with Speaker Dr. Lim Khee Hiang.</p>
+                          <p class="card-text"><small class="text-dark">08 Mei 2025</small></p>
+                          <a href="https://www.instagram.com/p/DI0hU_mRdOk/?img_index=1&igsh=MW95ZjVlcDFuM3JxZw==" target="_blank" class="btn btn-outline-success">Lihat Event</a>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Event Card 2 -->
+                    <div class="col-md-6">
+                      <div class="card text-mint h-100" style="background-color: #FFF; border: 1px solid #d9dcd6;">
+                        <div class="card-body">
+                          <h5 class="card-title text-success">Workshop Perpustakaan ITS 2025</h5>
+                          <div class="mb-3 d-flex justify-content-center">
+                            <div style="max-width:100%; width:100%;">
+                              <blockquote class="instagram-media"
+                                data-instgrm-permalink="https://www.instagram.com/p/DJQRWsBSoxM/?igsh=OGUwdjZ3M2xtbTZ6"
+                                data-instgrm-version="14"
+                                style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%; max-width:400px;">
+                              </blockquote>
+                            </div>
+                          </div>
+                          <p class="card-text">Hybrid Workshop "Strategi Akses dan Publikasi Bersama Springer Nature" untuk mendukung kegiatan akademik dan penelitian seluruh Sivitas Akademika ITS.</p>
+                          <p class="card-text"><small class="text-dark">09 Mei 2025</small></p>
+                          <a href="https://www.instagram.com/p/DJQRWsBSoxM/?igsh=OGUwdjZ3M2xtbTZ6" target="_blank" class="btn btn-outline-success">Lihat Event</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+		  
+              <script>
+                document.getElementById('searchInput').addEventListener('input', function() {
+                    const searchQuery = this.value.toLowerCase();
+                    const books = document.querySelectorAll('.book');
+            
+                    books.forEach(book => {
+                        const title = book.querySelector('.book-title').textContent.toLowerCase();
+                        const author = book.querySelector('.book-author').textContent.toLowerCase();
+            
+                        if (title.includes(searchQuery) || author.includes(searchQuery)) {
+                            book.style.display = 'flex';
+                        } else {
+                            book.style.display = 'none';
+                        }
+                    });
+                });
+            </script>            
+
+    <div class="last-edited">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png" alt="Clock Icon">
+    <span>Terakhir Diedit: 13 Mei 2025, 14:30 WIB</span></div>
+    
+    <script>// Menampilkan waktu terakhir kali halaman dimuat dengan ikon berputar
+    document.getElementById("last-edited").textContent = "Terakhir Diedit: " + new Date().toLocaleString("id-ID");
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Perpustakaan Try Alfi Syahri</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
